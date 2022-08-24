@@ -5,7 +5,7 @@ const router = express.Router()
 const multer = require("multer")
 
 const Aadhar = require("../models/aadhar")
-
+const Info = require("../models/info")
 
 
 const storage = multer.diskStorage({
@@ -46,39 +46,40 @@ function Biometric(file,res){
     args:`/home/ankit/Desktop/SIH/backend/uploads/${file}`
 };``
 
-    PythonShell.run('./controllers/biometric.py', options, function (err, results) {
+    PythonShell.run('./controllers/biometric.py', options, async function (err, results) {
             console.log("results",results)
+            if(results){
+            const r1 = await Info.findOne({UID:results[0]})
+            if(r1){
+              res.status(200).json({
+                success:true,
+                data:r1
+              })
+            }
+            else{
+              const r2 = await Aadhar.findOne({UID:results[0]})
+              if(r2){
+                res.status(200).json({
+                  success:true,
+                  data:r2
+                })   
+              }
+              else{
+                res.status(200).json({
+                  success:false
+                })  
+              }
+            }
+            }
             console.log(err)
-            res.status(200).json({
-              success:true,
-              data:results
-            })
+            
     })
 
 }
 
 
 
-async function findAadhar(UID,res){
-try{
-  const result = Aadhar.findOne({UID:UID})
-  if(result){
-    res.status(200).json({
-      success:true,
-      data:result
-    })
-  }
-}
-catch(err){
-  console.log(err)
-  res.status(200).json({
-    success:false,
-    data:result
-  })
-}
 
-
-}
 
 // router.post("/",(req,res)=>{
 //     PythonShell.run('biometric.py', options, function (err, results) {

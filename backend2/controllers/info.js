@@ -78,6 +78,7 @@ router.get("/all",async (req,res)=>{
     try{
         const result = await Info.find()
         if(result){
+            
             res.status(200).json({
                 success:true,
                 data:result
@@ -97,5 +98,34 @@ router.get("/all",async (req,res)=>{
         })
     }
 })
+
+
+router.post("/add",(req,res)=>{
+
+try{
+    const newinfo = new Info({
+        description:[],
+        aadharId:req.body.aadharId,
+        photo:req.body.photo,
+        station_address:req.body.station_address
+
+    })
+    const des = {
+        des:req.body.des,
+        updatedby:req.body.person,
+        updateOn:Date.now()
+    }
+    newinfo.description.push(des)
+    newinfo.save()
+}
+
+catch(err){
+console.log(err)
+}
+
+    
+})
+
+
 
 module.exports = router

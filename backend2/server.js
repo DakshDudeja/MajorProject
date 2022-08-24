@@ -6,6 +6,7 @@ const info = require("./controllers/info")
 const biometric = require("./controllers/biometric_search")
 const search = require("./controllers/search")
 const mongoose = require("mongoose")
+const add = require("./controllers/test")
 const port = 5000
 
 const app = express();
@@ -34,6 +35,7 @@ app.use("/info",info)
 app.use("/search",search)
 app.use("/biometric",biometric)
 
+// add()
 
 app.listen(port, () => {
   console.log("connected on port",port)

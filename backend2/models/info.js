@@ -3,19 +3,50 @@ const { Schema } = Mongoose;
 
 const InfoSchema = new Schema({
    
-   aadharId:{
-    type:"String"
-   },
+   
+   description:[],
+ 
    photo:{
     type:"String"
    },
    station_address:{
     type:"String"
    },
-   date:{
+   name:{
       type:"String"
-   }
-
+  },
+  UID:{
+      type:"String"
+      
+  },
+  newphoto:{
+   type:"String"
+  },
+  photo:{
+      type:"String",
+      
+  },
+  fingerprint:{
+      type:"String",
+      
+  },
+  address:{
+      type:"String"
+      
+  },
+  age:{
+      type:"String"
+  },
+  gender:{
+      type:"String"
+  },
+  dob:{
+      type:"String"
+  },
+  mobile:{
+      type:"String"
+  }
+   
 
 },{timestamps:true})
 

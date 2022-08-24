@@ -4,24 +4,23 @@ import sys
 
 file=sys.argv[1]
 sample = cv2.imread(file)
-print(sample)
+
 best_score = 0
 filename = None
 image = None
 kp1, kp2, mp = None, None, None
 
-print(best_score,filename)
 counter =0
 
 # l = os.listdir("/home/ankit/Desktop/SIH/backend/archive/SOCOFing/Altered")
 # print(l)
-for folder in os.listdir("/home/ankit/Desktop/SIH/backend/archive/SOCOFing/Altered"):
+for folder in os.listdir("/home/ankit/Desktop/SIH-Final/backend2/f_archive"):
     print(folder)
-    for file in [file for file in os.listdir("/home/ankit/Desktop/SIH/backend/archive/SOCOFing/Altered/" + folder)]:
+    for file in [file for file in os.listdir("/home/ankit/Desktop/SIH-Final/backend2/f_archive/" + folder)]:
         #   print('/home/ankit/Desktop/SIH/backend/archive/SOCOFing/Altered/' + folder + '/' +file)
         print(counter)
         counter+=1
-        fingerprint_image = cv2.imread('/home/ankit/Desktop/SIH/backend/archive/SOCOFing/Altered/' + folder + '/' +file)
+        fingerprint_image = cv2.imread('/home/ankit/Desktop/SIH-Final/backend2/f_archive/' + folder + '/' +file)
         print(fingerprint_image)
         sift = cv2.SIFT_create()
 
@@ -52,14 +51,14 @@ for folder in os.listdir("/home/ankit/Desktop/SIH/backend/archive/SOCOFing/Alter
             kp2 = keypoint_2
             mp = match_points
 
-print("best match: " + filename)
+print(filename)
 print("score: " + str(best_score))
 
 result = cv2.drawMatches(sample, kp1, image, kp2, mp, None)
 result = cv2.resize(result, (0,0), fx=4, fy=4)
-print(result)
-cv2.imshow('result', result)
-cv2.waitKey(0)
+# print(result)
+# cv2.imshow('result', result)
+# cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 
