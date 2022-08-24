@@ -21,7 +21,7 @@ function Navbar(){
                   <NavLink  to='/dashboard' activeclassname='active'>Dashboard</NavLink>
                 </li>
                 <li>
-                  <NavLink  to='/public' activeclassname='active'>Public Corner</NavLink>
+                  <NavLink  to='/notification' activeclassname='active'>Notifications</NavLink>
                 </li>
                 <li>
                   <NavLink  to='/contact' activeclassname='active'>Contact Us</NavLink>

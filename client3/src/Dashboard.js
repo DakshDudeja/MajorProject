@@ -7,9 +7,9 @@ import { DashboardGlobalFilter } from './DashboardGlobalFilter'
 import axios from "axios"
 import Navbar from './Navbar'
 function Dashboard(){
-
+    const [d1,setd1] = useState([])
     const columns = useMemo(() => DashboardColumn,[])
-    const data = useMemo(() => DATA,[])
+    const data = useMemo(() => [...d1],[d1])
     const [info,setinfo] = useState()
     const tableHooks = (hooks) => {
         hooks.visibleColumns.push((columns) => [
@@ -26,15 +26,20 @@ function Dashboard(){
         ])
     }
 
-// useEffect( async ()=>{
+useEffect(()=>{
 
-// const result = await axios.get("http:localhost:5000/info/all")
+async function retrieve(){
+    const result = await axios.get("http://localhost:5000/info/all")
+    console.log(result)
+    if(result){
+    setd1(result.data.data)
+    }
+}
 
-// if(result){
-// setinfo(result.data)
-// }
+retrieve()
 
-// },[])
+
+},[])
 
 
     const {

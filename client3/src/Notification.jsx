@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { Dropdown } from '../assets';
-import { NotificationData } from '../constant/NotificationData';
+import { NotificationData } from './NotificationData';
 import "./Notification.css"
 
 function Notification(){

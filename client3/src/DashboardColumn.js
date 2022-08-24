@@ -9,15 +9,11 @@ export const DashboardColumn =[
     },
     {
         Header:'Father Name',
-        accessor:'fname'
+        accessor:'father_name'
     },
     {
         Header:'Aadhaar No.',
-        accessor:'uid'
-    },
-    {
-        Header:'Age',
-        accessor:'age'
+        accessor:'UID'
     },
     {
         Header:'D.O.B.',
