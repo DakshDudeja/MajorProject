@@ -48,6 +48,7 @@ function Biometric(file,res){
 
     PythonShell.run('./controllers/biometric.py', options, async function (err, results) {
             console.log("results",results)
+            
             if(results){
             const r1 = await Info.findOne({UID:results[0]})
             if(r1){

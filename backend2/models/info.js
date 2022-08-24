@@ -5,7 +5,9 @@ const InfoSchema = new Schema({
    
    
    description:[],
- 
+   id:{
+    type:String
+   },
    photo:{
     type:"String"
    },
@@ -26,6 +28,9 @@ const InfoSchema = new Schema({
       type:"String",
       
   },
+  father_name:{
+    type:String
+  },
   fingerprint:{
       type:"String",
       
@@ -45,6 +50,9 @@ const InfoSchema = new Schema({
   },
   mobile:{
       type:"String"
+  },
+  age:{
+    type:"String"
   }
    
 

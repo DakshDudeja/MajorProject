@@ -22,6 +22,9 @@ const aadharSchema = new Schema({
         type:"String",
         
     },
+    father_name:{
+        type:String
+    },
     fingerprint:{
         type:"String",
         
@@ -45,4 +48,4 @@ const aadharSchema = new Schema({
 
 },{timestamps:true})
 
-module.exports = Mongoose.model('Aadhar', aadharSchema);
+module.exports = Mongoose.model('AadharBase', aadharSchema);

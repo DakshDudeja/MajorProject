@@ -1,30 +1,36 @@
 const express = require("express")
 const router = express.Router()
 const Info = require("../models/info")
+const Adata = require("../MOCK_DATA.json")
 const data = require("../MOCK_DATA(1).json")
 const Aadhar = require("../models/aadhar")
 async function add(){
 
 
     const res = await Aadhar.find();
-
+    
     try{
 
+        console.log("ghvh")
+
     for(var i = 0;i<res.length;i++){
-        data.map((each)=>{
+        var each = data[i]
+            console.log(res[i],"ghhhcgh")
             const newinfo = new Info({
+                id:res[i].id,
                 description:each.description,
-                UId:res[i].UID,
-                photo:each.photo,
+                UID:res[i].UID,
+                photo:res[i].photo,
                 station_address:each.station_address,
-                name:each.name,
-                age:each.age,
-                fingerpint:each.fingerprint,
-                gender:each.gender,
-                address:each.address,
+                name:res[i].name,
+                age:res[i].age,
+                fingerpint:res[i].fingerprint,
+                gender:res[i].gender,
+                address:res[i].address,
                 newphoto:"",
-                dob:each.dob,
-                mobile:each.mobile
+                dob:res[i].dob,
+                mobile:res[i].mobile,
+                father_name:res[i].father_name
 
             })
             const des = {
@@ -34,12 +40,43 @@ async function add(){
             }
             newinfo.description.push(des)
             newinfo.save()
-        })
+        
     }
 }
    catch(err){
 console.log(err)
    }
+
+}
+
+
+// {"id":1,"Name":"Meridel Scholar","UID":114685973090,"Father Name":"Meridel","Date of Birth":"23-04-2007","Gender":"Female","Mobile Number":8924654799,"Address":"6194 Forster Street"}
+
+async function addAadhar(){
+
+
+Adata.map((each)=>{
+
+const d = new Aadhar({
+    id:each.id,
+    name:each.Name,
+    UID:each.UID,
+    father_name:each["Father Name"],
+    dob:each["Date of Birth"],
+    gender:each.Gender,
+    mobile:each["Mobile Number"],
+    address:each.Address,
+    fingerprint:"",
+    photo:"",
+})
+
+
+d.save()
+
+
+
+})
+
 
 }
 

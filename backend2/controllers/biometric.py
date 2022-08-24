@@ -14,31 +14,30 @@ counter =0
 
 # l = os.listdir("/home/ankit/Desktop/SIH/backend/archive/SOCOFing/Altered")
 # print(l)
-for folder in os.listdir("/home/ankit/Desktop/SIH-Final/backend2/f_archive"):
-    print(folder)
-    for file in [file for file in os.listdir("/home/ankit/Desktop/SIH-Final/backend2/f_archive/" + folder)]:
+for folder in os.listdir("backend2/archive/f_archive"):
+    
         #   print('/home/ankit/Desktop/SIH/backend/archive/SOCOFing/Altered/' + folder + '/' +file)
-        print(counter)
-        counter+=1
-        fingerprint_image = cv2.imread('/home/ankit/Desktop/SIH-Final/backend2/f_archive/' + folder + '/' +file)
-        print(fingerprint_image)
-        sift = cv2.SIFT_create()
+    print(counter)
+    counter+=1
+    fingerprint_image = cv2.imread('backend2/archive/f_archive/' + '/' + file)
+    print(fingerprint_image)
+    sift = cv2.SIFT_create()
 
-        keypoint_1, desriptors_1 = sift.detectAndCompute(sample, None)
-        keypoint_2, desriptors_2 = sift.detectAndCompute(fingerprint_image, None)
+    keypoint_1, desriptors_1 = sift.detectAndCompute(sample, None)
+    keypoint_2, desriptors_2 = sift.detectAndCompute(fingerprint_image, None)
 
-        matches = cv2.FlannBasedMatcher({'algorithm': 0, 'trees': 10},
+    matches = cv2.FlannBasedMatcher({'algorithm': 0, 'trees': 10},
                 {}).knnMatch(desriptors_1, desriptors_2, k=2)
 
-        match_points = []
+    match_points = []
 
-        for p, q in matches:
-            if p.distance < 0.1 * q.distance:
-                match_points.append(p)
+    for p, q in matches:
+        if p.distance < 0.1 * q.distance:
+            match_points.append(p)
 
-        keypoints = 0
-        if len(keypoint_1) < len(keypoint_2):
-            keypoints = len(keypoint_2)
+    keypoints = 0
+    if len(keypoint_1) < len(keypoint_2):
+        keypoints = len(keypoint_2)
 
         else:
             keypoints = len(keypoint_1)
