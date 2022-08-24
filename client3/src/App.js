@@ -9,8 +9,12 @@ import SignUp from './Signup';
 import NewForm from './NewForm';
 import ContactUs from './ContactUs';
 import PublicCorner from './PublicCorner';
+import { useEffect } from 'react';
 
 function App() {
+
+
+
   return (
     <BrowserRouter>
       <Routes>

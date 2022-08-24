@@ -77,6 +77,7 @@ router.get("/",async (req,res)=>{
 router.get("/all",async (req,res)=>{
     try{
         const result = await Info.find()
+        console.log(result)
         if(result){
             
             res.status(200).json({
