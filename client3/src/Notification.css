@@ -1,0 +1,18 @@
+.notificationContainer{
+    width: 800px;
+    margin: 100px auto;
+}
+.notification{
+    background: #c4c4c4;
+    border-radius: 10px;
+    padding-left: 10px;
+    display: flex;
+    margin: 20px;
+}
+.notificationText{
+    width: 750px;
+}
+.notificationDropdownIcon{
+    width: 50px;
+    padding-top: 17px;
+}

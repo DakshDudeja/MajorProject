@@ -1,0 +1,63 @@
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    float: right;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+table tr:nth-child(even){background-color: #c5e3fb;}
+  
+table tr:hover {background-color: rgb(180, 194, 202);}
+  
+ table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #1f2937;
+    color: white;
+  }
+  .view-details{
+    align-items: center;
+    width: 60px;
+    height: 25px;
+    border: none;
+    margin: auto;
+    display: block;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .footerDashboard div{
+    margin-bottom: 10px;
+  }
+  .pageChange{
+    float: left;
+    margin: 2px 40px;
+  }
+  .pageChange .movePage{
+    border: none;
+    font-size: 15px;
+    background: #b3b9c1;
+    width: 80px;
+    height: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .pageNumber{
+    float: right;
+    margin: 2px 40px;
+  }
+  .initialPage, .lastPage{
+    border: none;
+    font-size: 15px;
+    background: #b3b9c1;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+  }
