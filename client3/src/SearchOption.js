@@ -1,7 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import './SearchOption.css'
 import axios from "axios"
-function SearchOption(){
+function SearchOption(props){
+
+  const navigate = useNavigate();
 
   async function biometricSearch(event){
 
@@ -11,8 +14,9 @@ function SearchOption(){
     const res = await axios.post("http://localhost:5000/biometric",formdata)
     if(res){
       console.log(res)
+      props.setMatric(res.data.data);
+      navigate.push("/new-form")
     }
-
   }
 
 
