@@ -84,6 +84,12 @@ console.log(photo)
 
                             <label className='information-box-upload'>Choose File<input onChange={(event)=>upload(event)} type="file"></input></label>
                         </div>
+                        <div className='information information-dropdown'>
+                            <select>
+                                <option>Reporting Missing Person</option>
+                                <option>Report Suspicious Activity</option>
+                            </select>
+                        </div>
                         <div className='information'>
                             <button onClick={(event)=>setstatus("name")} className='input'>Next</button>
                         </div>
