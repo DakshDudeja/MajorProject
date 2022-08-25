@@ -8,13 +8,17 @@ const Forum = require("../models/forum")
 
 router.post('/', (req, res) => {
 
+
+console.log(req.body)
+
   try{
     const newcase = new Forum({
-      photo:req.body.url,
+      photo:req.body.photo,
       address:req.body.address,
       pincode:req.body.pincode,
       purpose:req.body.purpose,
-      name:req.body.name
+      name:req.body.name,
+      status:"not-verified"
     })
       
     newcase.save()
@@ -57,7 +61,7 @@ catch(err){
 
     
 
-router.post("/single",(req,res)=>{
+router.post("/single",async(req,res)=>{
   try{
     const result = await Forum.findOne({_id:req.body.id})
   
@@ -74,5 +78,6 @@ router.post("/single",(req,res)=>{
 })
 
 
+module.exports = router
 
 //   backend2/uploads/caf79eab60c8d29853f82eec81cbc4d8

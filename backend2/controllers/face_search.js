@@ -77,7 +77,7 @@ function face(file,res){
             else if(results[0] === "mahak.jpeg"){
               uid = "654039758263";
             }
-            else if(results[0] === "daksh.jpeg"){
+            else if(results[0] === "daksh_dudeja.jpeg"){
               uid = "654039758266";
             }
             

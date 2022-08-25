@@ -16,6 +16,9 @@ const forumSchema = new Schema({
     },
     pincode:{
         type:String
+    },
+    status:{
+        type:String
     }
 
 },{timestamps:true})

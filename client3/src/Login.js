@@ -4,6 +4,7 @@ import './Login.css'
 import shape from "./img/shape.png"
 
 import Upload from './uploadImages'
+import axios from 'axios'
 
 function Login(){
 
@@ -13,7 +14,7 @@ function Login(){
     const [photo,setphoto] = useState("")
     const [address,setaddress] = useState("")
     const [purpose,setpurpose] = useState("")
-    const [name,setname] = useState("")
+    const [name,setname] = useState("anonymous")
     const [pincode,setpincode] = useState("")
     
 
@@ -31,12 +32,23 @@ function Login(){
 
         const formdata = new FormData()
         formdata.append("file",event.target.files[0])
-        Upload(event.target.files[0],event.target.files[0].filename,setphoto)
+        Upload(event.target.files[0].name,event.target.files[0],setphoto)
+        
         
     }
 
 
-console.log(photo)
+
+
+function save(){
+    const r1 = axios.post("http://localhost:5000/forum",{photo:photo,address:address+pincode,purpose:purpose,name:name, pincode:pincode})
+    if(r1){
+        setstatus("anonymous")
+    }
+}
+
+
+
 
   return (
     // <div className="loginPage">
@@ -85,9 +97,11 @@ console.log(photo)
                             <label className='information-box-upload'>Choose File<input onChange={(event)=>upload(event)} type="file"></input></label>
                         </div>
                         <div className='information information-dropdown'>
-                            <select>
-                                <option>Reporting Missing Person</option>
-                                <option>Report Suspicious Activity</option>
+                            <select onChange={(event)=>{setpurpose(event.target.value)
+                            
+                            }}>
+                                <option value="Reporting Missing Person" >Reporting Missing Person</option>
+                                <option value="Report Suspicious Activity" >Report Suspicious Activity</option>
                             </select>
                         </div>
                         <div className='information'>
@@ -96,7 +110,9 @@ console.log(photo)
                     </div>
                     :status === "name" ? <div className='info'>
                         <div className='information'>
-                            <input className='contact-input' type="text" placeholder='Enter your name'></input>
+                            <input className='contact-input' onChange={(event)=>{setname(event.target.value)
+                            
+                            }} type="text" placeholder='Enter your name'></input>
                         </div>
                         <div className='information information-or'>
                             <p>OR</p>
@@ -113,16 +129,16 @@ console.log(photo)
                     </div>
                     :<div className='info'>
                         <div className='information'>
-                            <input  className='contact-input' type="text" placeholder='Enter current address'></input>
+                            <input onChange={((event)=>setaddress(event.target.value))} className='contact-input' type="text" placeholder='Enter current address'></input>
                         </div>
                         <div className='information information-or'>
-                            <input className='contact-input' type="number" placeholder='Enter pincode'></input>
+                            <input onChange={((event)=>setpincode(event.target.value))} className='contact-input' type="number" placeholder='Enter pincode'></input>
                         </div>
-                        <div className='information information-or'>
+                        {/* <div className='information information-or'>
                         <input className='contact-input' type="text" placeholder='Enter city'></input>
-                        </div>
+                        </div> */}
                         <div className='information'>
-                            <button className='input'>Submit</button>
+                            <button onClick={save} className='input'>Submit</button>
                         </div>
                         <div className='information information-back-btn'>
                             <button onClick={(event)=>setstatus("name")} className='input'>Back</button>

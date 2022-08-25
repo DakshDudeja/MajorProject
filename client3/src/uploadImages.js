@@ -1,5 +1,5 @@
 
-
+import storage from "./fire_base"
 export default function Upload(name,file,setItem){
 
     const uploadtask = storage.storage().ref(`images/${name}`).put(file)
@@ -12,7 +12,7 @@ export default function Upload(name,file,setItem){
         () => {
             storage.storage()
                 .ref("images")
-                .child(props.name)
+                .child(name)
                 .getDownloadURL()
                 .then(imgurl => {
                     console.log(imgurl)
