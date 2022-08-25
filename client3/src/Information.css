@@ -53,3 +53,11 @@
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px #999;
 }
+form .details textarea{
+    padding: 0.8rem 1.2rem;
+    min-height: 250px;
+    width: 830px;
+    border-radius: 22px;
+    resize: none;
+    overflow-y: auto;
+}

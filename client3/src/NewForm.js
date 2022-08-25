@@ -9,6 +9,14 @@ function NewForm(props){
             <header>Information Form</header>
             <form action='#'>
                 <div className='form'>
+                <div className='details personal'>
+                        <span className='title'>Personal Details</span>
+                        <div className='fields'>
+                            <div className='input-field'>
+                                <img className='missing-person-image' src={props.metric.image} alt="missing person image"></img>
+                            </div>
+                        </div>
+                    </div>
                     <div className='details personal'>
                         <span className='title'>Personal Details</span>
                         <div className='fields'>
@@ -37,7 +45,7 @@ function NewForm(props){
                                 <input type='text' placeholder='Enter your age' value={props.metric.age} required></input> */}
                             </div>
                             <div className='input-field'>
-                                <label>Image</label>
+                                <label>Uploar Latest Image</label>
                                 <input type="file" placeholder='File upload ka input kaam ni kar rha' required></input>
                             </div>
                         </div>
