@@ -1,4 +1,6 @@
 import React,{ useEffect, useMemo, useState} from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import {useTable, useSortBy, useGlobalFilter, usePagination} from 'react-table'
 import { DashboardColumn } from './DashboardColumn'
 import DATA from './Dashboarddata.json'
@@ -7,6 +9,7 @@ import { DashboardGlobalFilter } from './DashboardGlobalFilter'
 import axios from "axios"
 import Navbar from './Navbar'
 function Dashboard(){
+    const navigate = useNavigate();
     const [d1,setd1] = useState([])
     const columns = useMemo(() => DashboardColumn,[])
     const data = useMemo(() => [...d1],[d1])
@@ -18,7 +21,9 @@ function Dashboard(){
                 id:'view',
                 Header:'View Details',
                 Cell : ({row}) => (
-                    <button className='view-details' onClick={() => alert("Hello")}>
+
+                    
+                    <button className='view-details' onClick={() => navigate(`/information/${row.cells[3].value}`)}>
                         View
                     </button>
                 )
@@ -96,6 +101,7 @@ retrieve()
             <tbody {...getTableBodyProps()}>
                 {
                     page.map(row => {
+                       
                         prepareRow(row)
                         return (
                             <tr {...row.getRowProps()}>{

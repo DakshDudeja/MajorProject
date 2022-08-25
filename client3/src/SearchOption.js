@@ -5,14 +5,28 @@ import axios from "axios"
 function SearchOption(props){
 
   const navigate = useNavigate();
-
+  const formdata = new FormData();
+  const formdata2 = new FormData();
   const [aadhar,setaadhar] = useState("")
   async function biometricSearch(event){
 
-    const formdata = new FormData()
+   
     formdata.append("file",event.target.files[0])
 
+    
+  }
+
+  async function faceSearch(event){
+
+   console.log("hvjvhjv")
+    formdata2.append("file",event.target.files[0])
+
+    
+  }
+
+  async function searchbyBiometric(){
     const res = await axios.post("http://localhost:5000/biometric",formdata)
+    formdata.delete("file")
     if(res){
       console.log(res)
       props.setMetric(res.data.data);
@@ -20,6 +34,17 @@ function SearchOption(props){
     }
   }
 
+
+  async function searchbyface(){
+    console.log("hbhhjvvhj")
+    const res = await axios.post("http://localhost:5000/face",formdata2)
+    formdata2.delete("file")
+    if(res){
+      console.log(res)
+      props.setMetric(res.data.data);
+      navigate("/new-form")
+    }
+  }
 
 console.log(props)
   async function searchbyno(){
@@ -88,7 +113,7 @@ console.log(props)
               <input onChange={(event)=>biometricSearch(event)} type='file'></input>
             </div>
             <div className='card-submit-btn'>
-              <h4>Search</h4>
+              <button onClick={searchbyBiometric}>Search</button>
             </div>
           </div>
         </div>
@@ -104,10 +129,10 @@ console.log(props)
               <p>If you have the photo of the person upload the image file in jpeg format and click on the Search button.</p>
             </div>
             <div className='card-file-btn'>
-              <input type='file'></input>
+              <input onChange={(event)=>faceSearch(event)}  type='file'></input>
             </div>
             <div className='card-submit-btn'>
-              <h4>Search</h4>
+              <button onClick={searchbyface}>Search</button>
             </div>
           </div>
         </div>
