@@ -13,6 +13,9 @@ const forumSchema = new Schema({
     },
     name:{
         type:String
+    },
+    pincode:{
+        type:String
     }
 
 },{timestamps:true})

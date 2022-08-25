@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Information.css'
 
 function Information(){
+
+
+
+
   return (
     <>
     {/* <div className='information-container'>

@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react';
+import {useState} from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Information from './Information';
 import Dashboard from './Dashboard';
@@ -14,7 +14,10 @@ import PublicCorner from './PublicCorner';
 
 function App() {
 
-  const [metric,setMetric] = useState([]);
+
+
+const [metric,setMetric] = useState([])
+
 
   return (
     <BrowserRouter>
@@ -22,9 +25,9 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/search" element={<SearchOption />} />
-        <Route path="/home" element={<Home  setMetric={setMetric} />} />
-        <Route path="/new-form" element={<NewForm metric={metric} />} />
+        <Route path="/search" element={<SearchOption  />} />
+        <Route path="/home" element={<Home setMetric={setMetric}/>} />
+        <Route path="/new-form" element={<NewForm metric={metric}/>} />
         <Route path="/public" element={<PublicCorner />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="information/:UID" element={<Information />}  />
