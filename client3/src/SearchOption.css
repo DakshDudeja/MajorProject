@@ -70,6 +70,7 @@
     height: 30px;
     width: 220px;
     font-size: 15px;
+    margin-bottom: 10px;
 }
 .card .card-file-btn input[type='file']::-webkit-file-upload-button {
     visibility: hidden;
@@ -97,13 +98,16 @@ input::-webkit-inner-spin-button {
 .card .card-submit-btn{
     display: flex;
     justify-content: center;
-    margin-top: 0.5rem;
-    width: auto;
+    /* margin-top: 1rem; */
+    width: 250px;
+    height: 35px;
     color: aliceblue;
-    padding: 8px 0px;
+    padding: 9px 0px;
+    border: none;
     border-radius: 5px;
-    background-color: rgb(44, 127, 243);
+    background-color: #1abc9c;
 }
+
 .card .card-submit-btn:hover{
     cursor: pointer;
     background-color: rgba(4, 4, 160, 0.742);

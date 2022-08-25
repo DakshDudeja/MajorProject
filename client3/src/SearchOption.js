@@ -68,9 +68,8 @@ console.log(props)
             <div className='card-file-btn'>
               <input onChange={(event)=>setaadhar(event.target.value)} type='number' placeholder='Enter aadhar number'></input>
             </div>
-            <div className='card-submit-btn'>
-              <button onClick={searchbyno}>Search</button>
-            </div>
+              <button className='card-submit-btn' onClick={searchbyno}>Search</button>
+            
           </div>
         </div>
         <div className='card'>
@@ -87,9 +86,8 @@ console.log(props)
             <div className='card-file-btn'>
               <input onChange={(event)=>biometricSearch(event)} type='file'></input>
             </div>
-            <div className='card-submit-btn'>
-              <h4>Search</h4>
-            </div>
+              <button className='card-submit-btn'>Search</button>
+            
           </div>
         </div>
         <div className='card'>
@@ -106,9 +104,9 @@ console.log(props)
             <div className='card-file-btn'>
               <input type='file'></input>
             </div>
-            <div className='card-submit-btn'>
-              <h4>Search</h4>
-            </div>
+  
+              <button className='card-submit-btn'>Search</button>
+            
           </div>
         </div>
       </div>
