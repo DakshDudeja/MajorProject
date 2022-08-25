@@ -37,7 +37,7 @@ catch(err){
 
 
 router.get("/all",async (req,res)=>{
-
+  console.log("Hi")
 try{
   const result = await Forum.find()
 

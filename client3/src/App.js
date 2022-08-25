@@ -10,6 +10,7 @@ import SignUp from './Signup';
 import NewForm from './NewForm';
 import ContactUs from './ContactUs';
 import PublicCorner from './PublicCorner';
+import Notification from './Notification'
 // import FoundInfo from './Information';
 
 function App() {
@@ -31,6 +32,7 @@ const [metric,setMetric] = useState([])
         <Route path="/public" element={<PublicCorner />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="information/:UID" element={<Information />}  />
+        <Route path="/notification" element={<Notification />} />
       </Routes>
     </BrowserRouter>
   );
