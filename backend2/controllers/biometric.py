@@ -38,17 +38,17 @@ for folder in os.listdir("backend2/archive/f_archive"):
     keypoints = 0
     if len(keypoint_1) < len(keypoint_2):
         keypoints = len(keypoint_2)
-
-        else:
+    else:
             keypoints = len(keypoint_1)
-
-        if len(match_points)/keypoints * 100 > best_score:
-            best_score = len(match_points)/keypoints * 100
-            filename = file
-            image = fingerprint_image
-            kp1 = keypoint_1
-            kp2 = keypoint_2
-            mp = match_points
+            
+            
+            if len(match_points)/keypoints * 100 > best_score:
+                best_score = len(match_points)/keypoints * 100
+                filename = file
+                image = fingerprint_image
+                kp1 = keypoint_1
+                kp2 = keypoint_2
+                mp = match_points
 
 print(filename)
 print("score: " + str(best_score))

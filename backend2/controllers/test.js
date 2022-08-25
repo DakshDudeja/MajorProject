@@ -15,7 +15,6 @@ async function add(){
 
     for(var i = 0;i<res.length;i++){
         var each = data[i]
-            console.log(res[i],"ghhhcgh")
             const newinfo = new Info({
                 id:res[i].id,
                 description:each.description,

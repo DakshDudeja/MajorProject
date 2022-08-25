@@ -35,7 +35,7 @@ app.use("/info",info)
 app.use("/search",search)
 app.use("/biometric",biometric)
 
-add()
+// add()
 
 app.listen(port, () => {
   console.log("connected on port",port)
