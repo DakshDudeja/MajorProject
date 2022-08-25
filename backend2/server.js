@@ -8,6 +8,7 @@ const search = require("./controllers/search")
 const mongoose = require("mongoose")
 const add = require("./controllers/test")
 const face = require("./controllers/face_search")
+const forum = require("./controllers/forum")
 const port = 5000
 
 const app = express();
@@ -38,7 +39,7 @@ app.use("/info",info)
 app.use("/search",search)
 app.use("/biometric",biometric)
 app.use("/face",face)
-
+app.use("/forum",forum)
 app.listen(port, () => {
   console.log("connected on port",port)
 });

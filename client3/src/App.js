@@ -12,7 +12,6 @@ import ContactUs from './ContactUs';
 import PublicCorner from './PublicCorner';
 import Notification from './Notification'
 // import FoundInfo from './Information';
-
 function App() {
 
 
