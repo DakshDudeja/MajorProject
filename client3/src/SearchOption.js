@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import './SearchOption.css'
 import axios from "axios"
@@ -6,6 +6,7 @@ function SearchOption(props){
 
   const navigate = useNavigate();
 
+  const [aadhar,setaadhar] = useState("")
   async function biometricSearch(event){
 
     const formdata = new FormData()
@@ -19,6 +20,16 @@ function SearchOption(props){
     }
   }
 
+
+
+  async function searchbyno(){
+    const res = await axios.post("http://localhost:5000/aadhar",{id:aadhar})
+    if(res){
+      console.log(res)
+      props.setMatric(res.data.data);
+      navigate.push("/new-form")
+    }
+  }
 
   return (
     // <div className='SearchOption'>
@@ -55,10 +66,10 @@ function SearchOption(props){
               <p>To search person using his/her Aadhar details enter the 12 digit unique aadhar number. After entering the number, click on the submit button.</p>
             </div>
             <div className='card-file-btn'>
-              <input type='number' placeholder='Enter aadhar number'></input>
+              <input onChange={(event)=>setaadhar(event.target.value)} type='number' placeholder='Enter aadhar number'></input>
             </div>
             <div className='card-submit-btn'>
-              <h4>Search</h4>
+              <button onClick={searchbyno}>Search</button>
             </div>
           </div>
         </div>
