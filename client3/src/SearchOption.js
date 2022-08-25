@@ -58,7 +58,7 @@ function SearchOption(props){
               <input type='number' placeholder='Enter aadhar number'></input>
             </div>
             <div className='card-submit-btn'>
-              <h4>Search</h4>
+              <button>Search</button>
             </div>
           </div>
         </div>

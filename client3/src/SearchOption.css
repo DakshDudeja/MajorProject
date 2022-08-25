@@ -98,10 +98,21 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
     background-color: rgba(4, 4, 160, 0.742);
 }
-.card .card-submit-btn h4{
+.card .card-submit-btn button{
     font-size: 17px;
     font-weight: 400;
+    margin-top: 0.5rem;
+    width: auto;
+    padding: 8px 0px;
+    background-color: rgb(44, 127, 243);
+    border: none;
+    color: aliceblue;
 }
+.card .card-submit-btn button:hover{
+    cursor: pointer;
+    background-color: rgba(4, 4, 160, 0.742);
+}
+
 
 
 
