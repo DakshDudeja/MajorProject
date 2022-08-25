@@ -51,8 +51,9 @@ function Biometric(file,res){
             
             if(results){
               console.log("vhjgh")
-            const r1 = await Info.findOne({UID:results[0].substring(0,11)})
-            console.log(r1)
+              // console.log(results[0].substring(0,18))
+            const r1 = await Info.findOne({UID:results[0].substring(0,12)})
+            // console.log(r1)
             if(r1){
               res.status(200).json({
                 success:true,
@@ -60,8 +61,8 @@ function Biometric(file,res){
               })
             }
             else{
-              const r2 = await Aadhar.findOne({UID:results[0].substring(0,11)})
-              console.log(r2)
+              const r2 = await Aadhar.findOne({UID:results[0].substring(0,12)})
+              // console.log(r2)
               if(r2){
                 res.status(200).json({
                   success:true,
