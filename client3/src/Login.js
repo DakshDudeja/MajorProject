@@ -1,15 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './Login.css'
-import './ContactUs.css'
-import { FaFacebookF } from 'react-icons/fa';
-import {FaLinkedinIn} from 'react-icons/fa';
-import {FaInstagram} from 'react-icons/fa';
-import {FaTwitter} from 'react-icons/fa';
+// import './ContactUs.css'
 import shape from "./img/shape.png"
-import Email from "./img/email.png"
-import Location from "./img/location.png"
-import Phone from "./img/phone.png"
-
 function Login(){
 
     const [status,setstatus] = useState("image")
@@ -62,8 +54,8 @@ function Login(){
                     <h3 className='title'>Anonymous! Report Crime</h3>
                     <p className='text'>Come forward and help us by reporting suspicious activities happening around you without disclosing your identity.</p>
                    {status === "image" ? <div className='info'>
-                        <div className='information'>
-                            <input type="file"></input>
+                        <div className='information information-box-up'>
+                            <label className='information-box-upload'>Choose File<input type="file"></input></label>
                         </div>
                         <div className='information'>
                             <button onClick={(event)=>setstatus("name")} className='input'>Next</button>
@@ -71,7 +63,7 @@ function Login(){
                     </div>
                     :status === "name" ? <div className='info'>
                         <div className='information'>
-                            <input type="text" placeholder='Enter your name'></input>
+                            <input className='contact-input' type="text" placeholder='Enter your name'></input>
                         </div>
                         <div className='information information-or'>
                             <p>OR</p>
@@ -79,7 +71,7 @@ function Login(){
                         <div className='information information-or'>
                             <p className='anonymous-info'>Proceed as Anonymous</p>
                         </div>
-                        <div className='information'>
+                        <div className='information information-back-btn'>
                             <button onClick={(event)=>setstatus("address")} className='input'>Next</button>
                         </div>
                         <div className='information information-back-btn'>
@@ -88,13 +80,13 @@ function Login(){
                     </div>
                     :<div className='info'>
                         <div className='information'>
-                            <input type="text" placeholder='Enter current address'></input>
+                            <input  className='contact-input' type="text" placeholder='Enter current address'></input>
                         </div>
                         <div className='information information-or'>
-                            <input type="number" placeholder='Enter pincode'></input>
+                            <input className='contact-input' type="number" placeholder='Enter pincode'></input>
                         </div>
                         <div className='information information-or'>
-                        <input type="text" placeholder='Enter city'></input>
+                        <input className='contact-input' type="text" placeholder='Enter city'></input>
                         </div>
                         <div className='information'>
                             <button className='input'>Submit</button>
@@ -111,12 +103,12 @@ function Login(){
                     <form action='index.html'>
                         <h3 className='contact-title'>Login</h3>
                         <div className='input-container'>
-                            <input onChange = {(e) => setPassword(e.target.value)} type='text' name='name' placeholder='Enter username' className='contact-input'></input>
+                            <input onChange = {(e) => setPassword(e.target.value)} type='text' placeholder='Enter username' className='contact-input'></input>
                             {/* <label htmlFor=''>Username</label> */}
                             <span>Username</span>
                         </div>
                         <div className='input-container'>
-                            <input onChange = {(e) => setPassword(e.target.value)} type='password' name='phone' placeholder='Enter password' className='contact-input'></input>
+                            <input onChange = {(e) => setPassword(e.target.value)} type='password' placeholder='Enter password' className='contact-input'></input>
                             {/* <label htmlFor=''>Phone</label> */}
                             <span>Password</span>
                         </div>
@@ -124,18 +116,14 @@ function Login(){
                         <div className="forgetPassword">
                          <a href="#">Forget Password?</a>
                          </div>
-                    <div className="login">
-                     <a href="/home">
-                     <button className="input" >
+                    <div className="login-form-btn">
+                        <a href="/home"  >
                          Login
-                     </button>
-                 </a>
+                        </a>
              </div>
-             <div className="signup">
+             <div className="login-form-btn">   
                  <a href="/signup">
-                 <button className="input">
                      New User? Register
-                 </button>
                  </a>
                  </div>
                     </form>

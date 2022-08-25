@@ -36,3 +36,9 @@
     margin: 0px 50px;
     /* font-weight: bolder; */
   }
+  .text-info{
+    font-size: 17px;
+    color: #333;
+    margin: 2.5rem 0 2rem 0;
+    line-height: 1.7;
+  }

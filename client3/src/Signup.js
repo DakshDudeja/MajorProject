@@ -96,20 +96,8 @@ function SignUp(){
             <img src={shape} className='square'></img>
             <div className='form'>
                 <div className='contact-info'>
-                    <h3 className='title'>SignUp</h3>
-                    <p className='text'>Platform for helping authorised officials in identification of individual rescued from human trafficking.</p>
-                    <div className='info'>
-                        <div className='information'>
-                            
-                            <p>MAIT, Rohini, Sector-22, Delhi-110086</p>
-                        </div>
-                        <div className='information'>
-                            <p>mait123@mait.ac.in</p>
-                        </div>
-                        <div className='information'>
-                            <p>+91-99995-99995</p>
-                        </div>
-                    </div>
+                    <h3 className='title'>About Cyduck</h3>
+                    <p className='text-info'>Platform for helping authorised officials in identification of individual rescued from human trafficking.</p>
                 </div>
                 <div className='contact-form'>
                     <span className='circle one'></span>
@@ -126,16 +114,20 @@ function SignUp(){
                             <span>Username</span>
                         </div>
                         <div className='input-container'>
-                            <input type='tel' name='phone' className='contact-input'></input>
-                            <label htmlFor=''>Phone</label>
-                            <span>Phone</span>
+                            <input type='password' className='contact-input' placeholder="Enter password"></input>
+                            <span>Password</span>
                         </div>
-                        <div className='input-container textarea'>
-                            <textarea name='message' className='contact-input'></textarea>
-                            <label htmlFor=''>Message</label>
-                            <span>Message</span>
+                        <div className='input-container'>
+                            <input type="password" className='contact-input' placeholder="Re-enter password"></input >
+                            <span>Confirm Password</span>
                         </div>
-                        <input type='submit' value='Send' className='form-submit-btn'></input>
+                        {/* <input type='submit' value='Send' className='form-submit-btn'></input> */}
+                        <div className="login-form-btn">
+                            <a href="/home">Signup</a>
+                        </div>
+                        <div className="login-form-btn">
+                            <a href="/">Already have an account? Login</a>
+                        </div>
                     </form>
                 </div>
             </div>
