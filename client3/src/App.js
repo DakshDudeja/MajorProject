@@ -23,8 +23,8 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/search" element={<SearchOption setMettic={setMetric}/>} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/search" element={<SearchOption />} />
+        <Route path="/home" element={<Home  setMetric={setMetric} />} />
         <Route path="/new-form" element={<NewForm metric={metric} />} />
         <Route path="/public" element={<PublicCorner />} />
         <Route path="/contact" element={<ContactUs />} />

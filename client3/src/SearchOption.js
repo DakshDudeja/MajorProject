@@ -15,19 +15,19 @@ function SearchOption(props){
     const res = await axios.post("http://localhost:5000/biometric",formdata)
     if(res){
       console.log(res)
-      props.setMatric(res.data.data);
-      navigate.push("/new-form")
+      props.setMetric(res.data.data);
+      navigate("/new-form")
     }
   }
 
 
-
+console.log(props)
   async function searchbyno(){
     const res = await axios.post("http://localhost:5000/aadhar",{id:aadhar})
     if(res){
       console.log(res)
-      props.setMatric(res.data.data);
-      navigate.push("/new-form")
+      props.setMetric(res.data.data);
+      navigate("/new-form")
     }
   }
 

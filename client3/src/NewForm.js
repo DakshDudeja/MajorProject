@@ -14,27 +14,27 @@ function NewForm(props){
                         <div className='fields'>
                             <div className='input-field'>
                                 <label>Full Name</label>
-                                <input type='text' placeholder='Enter your name' value={props.name} required></input>
+                                <input type='text' placeholder='Enter your name' value={props.metric.name} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Date of Birth</label>
-                                <input type='date' placeholder='Enter birth date' value={props.dob} required></input>
+                                <input type='text' placeholder='Enter birth date' value={props.metric.dob} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Mobile Number</label>
-                                <input type='text' placeholder='Enter mobile number' value={props.mobile} required></input>
+                                <input type='text' placeholder='Enter mobile number' value={props.metric.mobile} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Father's Name</label>
-                                <input type='text' placeholder="Enter your father's name" value={props.father_name} required></input>
+                                <input type='text' placeholder="Enter your father's name" value={props.metric.father_name} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Gender</label>
-                                <input type='text' placeholder='Enter your gender' value={props.gender} required></input>
+                                <input type='text' placeholder='Enter your gender' value={props.metric.gender} required></input>
                             </div>
                             <div className='input-field'>
-                                <label>Age</label>
-                                <input type='number' placeholder='Enter your age' value={props.age} required></input>
+                                {/* <label>Age</label>
+                                <input type='text' placeholder='Enter your age' value={props.metric.age} required></input> */}
                             </div>
                             <div className='input-field'>
                                 <label>Image</label>
@@ -47,11 +47,11 @@ function NewForm(props){
                         <div className='fields'>
                             <div className='input-field'>
                                 <label>Aadhar Number</label>
-                                <input type='number' placeholder='Enter your aadhar number' value={props.UID} required></input>
+                                <input type='number' placeholder='Enter your aadhar number' value={props.metric.UID} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Residential Address (Line 1)</label>
-                                <input type='text' placeholder='House No. / Street / Block No.' value={props.address} required></input>
+                                <input type='text' placeholder='House No. / Street / Block No.' value={props.metric.address} required></input>
                             </div>
                             <div className='input-field'>
                                 {/* <label>Residential Address (Line 2)</label>

@@ -3,12 +3,12 @@ import Navbar from './Navbar';
 import NewForm from './NewForm';
 import SearchOption from './SearchOption';
 
-function Home(){
+function Home(props){
   return (
     <div>
         <Navbar />
         {/* <NewForm /> */}
-        <SearchOption />
+        <SearchOption setMetric={props.setMetric}/>
     </div>
   )
 }
