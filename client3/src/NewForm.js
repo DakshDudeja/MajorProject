@@ -1,7 +1,10 @@
 import React from 'react'
 import './NewForm.css'
 
-function NewForm(){
+function NewForm(props){
+
+
+
   return (
     <>
         <div className='form-container'>
@@ -13,27 +16,27 @@ function NewForm(){
                         <div className='fields'>
                             <div className='input-field'>
                                 <label>Full Name</label>
-                                <input type='text' placeholder='Enter your name' required></input>
+                                <input type='text' placeholder='Enter your name' value={props.name} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Date of Birth</label>
-                                <input type='date' placeholder='Enter birth date' required></input>
+                                <input type='date' placeholder='Enter birth date' value={props.dob} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Mobile Number</label>
-                                <input type='text' placeholder='Enter mobile number' required></input>
+                                <input type='text' placeholder='Enter mobile number' value={props.mobile} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Father's Name</label>
-                                <input type='text' placeholder="Enter your father's name" required></input>
+                                <input type='text' placeholder="Enter your father's name" value={props.father_name} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Gender</label>
-                                <input type='text' placeholder='Enter your gender' required></input>
+                                <input type='text' placeholder='Enter your gender' value={props.gender} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Age</label>
-                                <input type='number' placeholder='Enter your age' required></input>
+                                <input type='number' placeholder='Enter your age' value={props.age} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Image</label>
@@ -46,17 +49,17 @@ function NewForm(){
                         <div className='fields'>
                             <div className='input-field'>
                                 <label>Aadhar Number</label>
-                                <input type='number' placeholder='Enter your aadhar number' required></input>
+                                <input type='number' placeholder='Enter your aadhar number' value={props.UID} required></input>
                             </div>
                             <div className='input-field'>
                                 <label>Residential Address (Line 1)</label>
-                                <input type='text' placeholder='House No. / Street / Block No.' required></input>
+                                <input type='text' placeholder='House No. / Street / Block No.' value={props.address} required></input>
                             </div>
                             <div className='input-field'>
-                                <label>Residential Address (Line 2)</label>
-                                <input type='text' placeholder='Area / Locality' required></input>
+                                {/* <label>Residential Address (Line 2)</label>
+                                <input type='text' placeholder='Area / Locality' required></input> */}
                             </div>
-                            <div className='input-field'>
+                            {/* <div className='input-field'>
                                 <label>City</label>
                                 <input type='text' placeholder='Enter city' required></input>
                             </div>
@@ -67,7 +70,7 @@ function NewForm(){
                             <div className='input-field'>
                                 <label>Nationality</label>
                                 <input type='text' placeholder='Enter your Nationality' required></input>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
