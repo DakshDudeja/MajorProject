@@ -9,15 +9,13 @@ import SignUp from './Signup';
 import NewForm from './NewForm';
 import ContactUs from './ContactUs';
 import PublicCorner from './PublicCorner';
-import FoundInfo from './Information'
-import { useEffect, useState } from 'react';
+// import FoundInfo from './Information';
 
 function App() {
 
 
 
 const [metric,setMetric] = useState([])
-
 
 
   return (
@@ -31,7 +29,7 @@ const [metric,setMetric] = useState([])
         <Route path="/new-form" element={<NewForm metric={metric}/>} />
         <Route path="/public" element={<PublicCorner />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="./information/:UID" element={<FoundInfo />} />
+        <Route path="information/:UID" element={<Information />}  />
       </Routes>
     </BrowserRouter>
   );

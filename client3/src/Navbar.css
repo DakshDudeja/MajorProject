@@ -7,7 +7,7 @@
     font-family:'Lucida Sans';
 }
 nav{
-    background: #0082e6;
+    background: #1abc9a;
     height: 45px;
     width: 100%;
 }
@@ -19,7 +19,7 @@ nav{
     font-weight: bold;
 }
 .logo span{
-    color: rgb(252, 255, 160);
+    color: rgb(252, 210, 90);
 }
 
 nav ul{
@@ -42,8 +42,12 @@ nav ul li a{
     text-transform: uppercase;
 }
 
-.active, a:hover{
-    background: #06497c;
+.active{
+    color: #ffcb07;
+    transition: .5s;
+}
+a:hover{
+    color: #fde283;
     transition: .5s;
 }
 

@@ -12,7 +12,11 @@ table td, table th {
     padding: 8px;
   }
   
-table tr:nth-child(even){background-color: #c5e3fb;}
+table tr:nth-child(even){
+  background-color: rgba(26, 188, 154, 0.5);
+  /* opacity: 0.3; */
+  color: black;
+}
   
 table tr:hover {background-color: rgb(180, 194, 202);}
   

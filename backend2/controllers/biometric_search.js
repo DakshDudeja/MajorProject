@@ -43,7 +43,7 @@ function Biometric(file,res){
 
   let options = {
 
-    args:`/home/ankit/Desktop/SIH-New-build/backend2/uploads/${file}`
+    args:`D:/SIH_Kanpur/backend2/uploads/${file}`
 };``
 
     PythonShell.run('./controllers/biometric.py', options, async function (err, results) {
