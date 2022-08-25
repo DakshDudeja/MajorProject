@@ -43,14 +43,16 @@ function Biometric(file,res){
 
   let options = {
 
-    args:`/home/ankit/Desktop/SIH/backend/uploads/${file}`
+    args:`/home/ankit/Desktop/SIH-New-build/backend2/uploads/${file}`
 };``
 
     PythonShell.run('./controllers/biometric.py', options, async function (err, results) {
             console.log("results",results)
             
             if(results){
-            const r1 = await Info.findOne({UID:results[0]})
+              console.log("vhjgh")
+            const r1 = await Info.findOne({UID:results[0].substring(0,11)})
+            console.log(r1)
             if(r1){
               res.status(200).json({
                 success:true,
@@ -58,7 +60,8 @@ function Biometric(file,res){
               })
             }
             else{
-              const r2 = await Aadhar.findOne({UID:results[0]})
+              const r2 = await Aadhar.findOne({UID:results[0].substring(0,11)})
+              console.log(r2)
               if(r2){
                 res.status(200).json({
                   success:true,

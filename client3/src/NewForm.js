@@ -3,8 +3,6 @@ import './NewForm.css'
 
 function NewForm(props){
 
-
-
   return (
     <>
         <div className='form-container'>
