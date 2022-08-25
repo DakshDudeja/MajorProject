@@ -2,7 +2,20 @@ import React, {useState, useEffect} from 'react'
 import './Login.css'
 // import './ContactUs.css'
 import shape from "./img/shape.png"
+
+import Upload from './uploadImages'
+
 function Login(){
+
+
+    
+
+    const [photo,setphoto] = useState("")
+    const [address,setaddress] = useState("")
+    const [purpose,setpurpose] = useState("")
+    const [name,setname] = useState("")
+    const [pincode,setpincode] = useState("")
+    
 
     const [status,setstatus] = useState("image")
     function focusElemnt(event){
@@ -12,6 +25,19 @@ function Login(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
+
+
+    async function upload(event){
+
+        const formdata = new FormData()
+        formdata.append("file",event.target.files[0])
+        Upload(event.target.files[0],event.target.files[0].filename,setphoto)
+        
+    }
+
+
+console.log(photo)
+
   return (
     // <div className="loginPage">
     //     <div className="loginContainer">
@@ -54,8 +80,9 @@ function Login(){
                     <h3 className='title'>Anonymous! Report Crime</h3>
                     <p className='text'>Come forward and help us by reporting suspicious activities happening around you without disclosing your identity.</p>
                    {status === "image" ? <div className='info'>
-                        <div className='information information-box-up'>
-                            <label className='information-box-upload'>Choose File<input type="file"></input></label>
+                        <div className='information information-box-up'>    const [verfied,setstatus] = useState("")
+
+                            <label className='information-box-upload'>Choose File<input onChange={(event)=>upload(event)} type="file"></input></label>
                         </div>
                         <div className='information'>
                             <button onClick={(event)=>setstatus("name")} className='input'>Next</button>

@@ -13,7 +13,7 @@ function NewForm(props){
                         <span className='title'>Personal Details</span>
                         <div className='fields'>
                             <div className='input-field'>
-                                <img className='missing-person-image' src={props.metric.image} alt="missing person image"></img>
+                                <img className='missing-person-image' src={props.metric.photo} alt="missing person image"></img>
                             </div>
                         </div>
                     </div>
