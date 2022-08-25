@@ -57,6 +57,12 @@ function Login(){
                         <div className='information information-box-up'>
                             <label className='information-box-upload'>Choose File<input type="file"></input></label>
                         </div>
+                        <div className='information information-dropdown'>
+                            <select>
+                                <option>Reporting Missing Person</option>
+                                <option>Report Suspicious Activity</option>
+                            </select>
+                        </div>
                         <div className='information'>
                             <button onClick={(event)=>setstatus("name")} className='input'>Next</button>
                         </div>

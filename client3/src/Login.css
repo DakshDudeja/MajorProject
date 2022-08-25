@@ -133,3 +133,9 @@ body {
   .form .information-back-btn{
     margin-bottom: 0;
   }
+  .information-dropdown{
+    display: flex;
+    justify-content: center;
+    height: 20px;
+    width: 100%;
+  }
