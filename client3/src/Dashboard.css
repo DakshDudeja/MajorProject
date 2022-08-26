@@ -13,7 +13,7 @@ table td, table th {
   }
   
 table tr:nth-child(even){
-  background-color: rgba(26, 188, 154, 0.5);
+  background-color: rgba(0,43,91, 0.5);
   /* opacity: 0.3; */
   color: black;
 }

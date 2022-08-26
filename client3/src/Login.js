@@ -168,7 +168,7 @@ function save(){
                          <a href="#">Forget Password?</a>
                          </div>
                          <a href="/home"  ><div className="login-form-btn">
-                         Log
+                         LogIn
                         </div></a>
                         <a href="/signup"><div className="login-form-btn">   
                      New User? Register

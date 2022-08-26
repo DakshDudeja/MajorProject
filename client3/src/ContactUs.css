@@ -24,7 +24,7 @@
     background-color: green;
 } */
 .contact-container .form .contact-form{
-    background-color: #1abc9c;
+    background-color: #002b5b;
     position: relative;
 }
 .contact-container .form .contact-form .circle{
@@ -49,7 +49,7 @@
     position: absolute;
     width: 26px;
     height: 26px;
-    background-color: #1abc9c;
+    background-color: #002b5b;
     transform: rotate(45deg);
     top:50px;
     left: -13px;
@@ -112,7 +112,7 @@
     background-color: #fff;
     border: 2px solid #fafafa;
     font-size: 0.95rem;
-    color: #1abc9c;
+    color: #002b5b;
     line-height: 1;
     border-radius: 25px;
     outline: none;
@@ -142,7 +142,7 @@
     opacity: 0;
     transition: 0.3s;
     height: 5px;
-    background-color: #1abc9c;
+    background-color: #002b5b;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -168,7 +168,7 @@
     position: relative;
 }
 .contact-container .form .contact-info .title{
-    color: #1abc9c;
+    color: #002b5b;
     font-size: 1.7rem;
 }
 .contact-container .form .contact-info .text{
@@ -200,7 +200,7 @@
     width: 35px;
     height: 35px;
     border-radius: 5px;
-    background: linear-gradient(45deg, #1abc9c, #149279);
+    background: linear-gradient(45deg, #002b5b, #001739);
     color: #fff;
     text-align: center;
     line-height: 40px;
@@ -215,7 +215,7 @@
     position: absolute;
     width: 110px;
     height: 110px;
-    border: 22px solid #1abc9c;
+    border: 22px solid #002b5b;
     border-radius: 50%;
     bottom: -77px;
     right: 50px;
@@ -226,7 +226,7 @@
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: linear-gradient(to bottom, #1cd4af, #159b80);
+    background: linear-gradient(to bottom, #1c62d4, #023897);
     bottom: 50%;
     right: 50%;
     transform: translate(-40%, 38%);
