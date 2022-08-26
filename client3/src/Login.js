@@ -167,16 +167,12 @@ function save(){
                         <div className="forgetPassword">
                          <a href="#">Forget Password?</a>
                          </div>
-                    <div className="login-form-btn">
-                        <a href="/home"  >
-                         Login
-                        </a>
-             </div>
-             <div className="login-form-btn">   
-                 <a href="/signup">
+                         <a href="/home"  ><div className="login-form-btn">
+                         Log
+                        </div></a>
+                        <a href="/signup"><div className="login-form-btn">   
                      New User? Register
-                 </a>
-                 </div>
+                 </div></a>
                     </form>
                 </div>
             </div>

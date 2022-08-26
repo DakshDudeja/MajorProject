@@ -8,7 +8,7 @@ import './Dashboard.css'
 import { DashboardGlobalFilter } from './DashboardGlobalFilter'
 import axios from "axios"
 import Navbar from './Navbar'
-import Loading from './img/loading.gif'
+import Loading from './img/load.gif'
 function Dashboard(){
     const navigate = useNavigate();
     const [d1,setd1] = useState([])
