@@ -38,19 +38,22 @@ function SearchOption(props){
     setl1(true)
     const res = await axios.post("http://localhost:5000/biometric",formdata)
     formdata.delete("file")
-    if(res){
+    if(res.data.status === true){
       console.log(res)
       props.setMetric(res.data.data);
       navigate("/new-form")
     }
     else{
-      setbiostate(true)
+      alert("No record found")
+
+      setl1(false)
     }
+
   }
 
 
   async function searchbyface(){
-    console.log("hbhhjvvhj")
+  setl3(true)
     const res = await axios.post("http://localhost:5000/face",formdata2)
     formdata2.delete("file")
     if(res.data.success === true){
@@ -59,21 +62,33 @@ function SearchOption(props){
       navigate("/new-form")
     }
     else{
-      setfacestate(true)
+   alert("No record found")
+      setl3(false)
     }
   }
 
 console.log(props)
   async function searchbyno(){
+setl2(true)
+
+if(aadhar.length !== 12 || aadhar.length === 0){
+  alert("Aadhar number must be 12 characters")
+setl2(false)
+}
+else{
     const res = await axios.post("http://localhost:5000/aadhar",{id:aadhar})
+    console.log(res)
     if(res.data.success === true){
       console.log(res)
       props.setMetric(res.data.data);
       navigate("/new-form")
     }
     else{
-      setnostate(true)
+      alert("No record found")
+
+      setl2(false)
     }
+  }
   }
 
   return (
@@ -121,10 +136,10 @@ console.log(props)
               </select>
             </div>
               <button className='card-submit-btn' onClick={searchbyno}>Search</button>
-              <img className='loading' src={Loader}></img>
-          </div>
+{              l2 && <img className='loading' src={Loader}></img>
+}          </div>
+
         </div>
-       { nostate && <p className="para" style={{color:"red"}}>Not Found</p>}
        
         <div className='card'>
           <div className='card-image'>
@@ -148,9 +163,7 @@ console.log(props)
               </select>
             </div>
               <button className='card-submit-btn' onClick={searchbyBiometric}>Search</button>
-              <img className='loading' src={Loader}></img>
-          </div>
-          { biostate && <p className="para" style={{color:"red"}}>Not Found</p>}
+{l1&& <img className='loading' src={Loader}></img>}          </div>
         </div>
         <div className='card'>
           <div className='card-image'>
@@ -174,9 +187,8 @@ console.log(props)
               </select>
             </div>
               <button className='card-submit-btn' onClick={searchbyface}>Search</button>
-              <img className='loading' src={Loader}></img>
-          </div>
-          { facestate && <p className="para" style={{color:"red"}}>Not Found</p>}
+{  l3 &&      <img className='loading' src={Loader}></img>
+}          </div>
 
         </div>
       </div>

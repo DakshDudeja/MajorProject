@@ -22,63 +22,47 @@ const storage = multer.diskStorage({
 
 const upload = multer({dest: 'uploads/'});
 
-router.post('/', upload.single('file'), (req, res) => {
+router.post('/', async(req, res) => {
 
-    console.log("hello1")
-    console.log(req.file)
-    if (!req.file) {
-      console.log("No file received");
-      return res.send({
-        success: false
-      });
-  
-    } else {
-      console.log('file received');
-    
-    }
-
-    const t1 = await Aadhar.find({$and:[{gender:req.body.gender,state:req.body.state}]})
-
-
-    face(req.file.filename,res)
+     face(res)
 
   });
 
  
 
-function face(file,res){
+function face(res){
 
 
     let options = {
 
-        args:`/home/ankit/Desktop/SIH-New-build/backend2/uploads/${file}`
+        args:`/home/ankit/Desktop/SIH-New-build/backend2/uploads/`
     };``
 
-        PythonShell.run('./controllers/face_search.py', options, async function (err, results) {
+        PythonShell.run('./controllers/faces/face_recog_sih.py', options, async function (err, results) {
           
           if(results){
 
         
             var uid = ""
-            if(results !== null){
+            if(results[0] !== null){
 
             
-            if(results[0] === "mudit.jpeg"){
+            if(results[0][0] === "mudit"){
               uid = "654039758264";
             }
-            else if(results[0] === "ankit.jpeg"){
+            else if(results[0][0] === "ankit"){
               uid = "654039758265";
             }
-            else if(results[0] === "sourav.jpeg"){
+            else if(results[0][0] === "sourav"){
               uid = "654039758261";
             }
-            else if(results[0] === "pranjal.jpeg"){
+            else if(results[0][0] === "pranjal"){
               uid = "654039758262";
             }
-            else if(results[0] === "mahak.jpeg"){
+            else if(results[0][0] === "mahak"){
               uid = "654039758263";
             }
-            else if(results[0] === "daksh_dudeja.jpeg"){
+            else if(results[0][0] === "daksh"){
               uid = "654039758266";
             }
             
@@ -121,7 +105,7 @@ function face(file,res){
               success:false
             })  
           }
-
+          console.log(err)
 
            
     })

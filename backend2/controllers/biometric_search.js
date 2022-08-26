@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({dest: 'uploads/'});
 
-router.post('/', upload.single('file'), (req, res) => {
+router.post('/', upload.single('file'), async(req, res) => {
 
     console.log("hello1")
     if (!req.file) {
@@ -33,7 +33,7 @@ router.post('/', upload.single('file'), (req, res) => {
     
     }
 
-    const t1 = await Aadhar.find({$and:[{gender:req.body.gender,state:req.body.state}]})
+    // const t1 = await Aadhar.find({$and:[{gender:req.body.gender,state:req.body.state}]})
     
     Biometric(req.file.filename,res)
 
@@ -45,7 +45,7 @@ function Biometric(file,res){
 
   let options = {
 
-    args:`/home/ankit/Desktop/SIH-New-build/backend2/uploads/${file}`
+    args:`D:/SIH_Kanpur/backend2/uploads/${file}`
 };``
 
     PythonShell.run('./controllers/biometric.py', options, async function (err, results) {

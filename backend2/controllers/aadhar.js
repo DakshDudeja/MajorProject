@@ -9,7 +9,17 @@ router.post("/",async (req,res)=>{
 try{
 const info = await Aadhar.findOne({UID:req.body.id})
 console.log(info)
-res.status(200).json({success:true,data:info})
+if(info !== null){
+    console.log("djk")
+    res.status(200).json({success:true,data:info})
+
+}
+else{
+    console.log("djk")
+
+    res.status(200).json({success:false})
+  
+}
 }
 catch(err){
     console.log(err)
