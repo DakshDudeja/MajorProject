@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import './SearchOption.css'
 import axios from "axios"
+import Loader from './img/load.gif'
 
 function SearchOption(props){
 
@@ -13,6 +14,9 @@ function SearchOption(props){
   const [biostate,setbiostate] = useState(false)
   const [facestate,setfacestate] = useState(false)
   const [nostate,setnostate] = useState(false)
+  const [l1,setl1] = useState(false)
+  const [l2,setl2] = useState(false)
+  const [l3,setl3] = useState(false)
 
   async function biometricSearch(event){
 
@@ -31,6 +35,7 @@ function SearchOption(props){
   }
 
   async function searchbyBiometric(){
+    setl1(true)
     const res = await axios.post("http://localhost:5000/biometric",formdata)
     formdata.delete("file")
     if(res){
@@ -90,9 +95,9 @@ console.log(props)
     //     </div>
     // </div>
       <>
-    <div className='search-card-header'>
-      <h3>Search Details</h3>
-    </div>
+    {/* <div className='search-card-header'> */}
+      {/* <h3>Search Details</h3> */}
+    {/* </div> */}
       <div className='card-container'>
         <div className='card'>
           <div className='card-image'>
@@ -102,17 +107,25 @@ console.log(props)
             <div className='card-title'>
               <h3>Using Aadhar Number</h3>
             </div>
-            <div className='card-info'>
+            {/* <div className='card-info'>
               <p>To search person using his/her Aadhar details enter the 12 digit unique aadhar number. After entering the number, click on the submit button.</p>
-            </div>
+            </div> */}
             <div className='card-file-btn'>
               <input onChange={(event)=>setaadhar(event.target.value)} type='number' placeholder='Enter aadhar number'></input>
             </div>
+            <div className='card-file-btn'>
+              <select>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
               <button className='card-submit-btn' onClick={searchbyno}>Search</button>
-            
+              <img className='loading' src={Loader}></img>
           </div>
         </div>
        { nostate && <p className="para" style={{color:"red"}}>Not Found</p>}
+       
         <div className='card'>
           <div className='card-image'>
             <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWjbDIemvGRhKKv5_iU26ZuJAAaKbsO-x_aQ&usqp=CAU' alt='fingerprint image'></img>
@@ -121,13 +134,21 @@ console.log(props)
             <div className='card-title'>
               <h3>By Biometrics</h3>
             </div>
-            <div className='card-info'>
+            {/* <div className='card-info'>
               <p>To search person using his/her biometrics upload biometric image in jpeg format. Then click on the submit button.</p>
-            </div>
+            </div> */}
             <div className='card-file-btn'>
               <input onChange={(event)=>biometricSearch(event)} type='file'></input>
             </div>
+            <div className='card-file-btn'>
+              <select>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
               <button className='card-submit-btn' onClick={searchbyBiometric}>Search</button>
+              <img className='loading' src={Loader}></img>
           </div>
           { biostate && <p className="para" style={{color:"red"}}>Not Found</p>}
         </div>
@@ -139,13 +160,21 @@ console.log(props)
             <div className='card-title'>
               <h3>By Photo</h3>
             </div>
-            <div className='card-info'>
+            {/* <div className='card-info'>
               <p>If you have the photo of the person upload the image file in jpeg format and click on the Search button.</p>
-            </div>
+            </div> */}
             <div className='card-file-btn'>
               <input onChange={(event)=>faceSearch(event)}  type='file'></input>
             </div>
+            <div className='card-file-btn'>
+              <select>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Prefer not to say</option>
+              </select>
+            </div>
               <button className='card-submit-btn' onClick={searchbyface}>Search</button>
+              <img className='loading' src={Loader}></img>
           </div>
           { facestate && <p className="para" style={{color:"red"}}>Not Found</p>}
 

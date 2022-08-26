@@ -14,9 +14,5 @@ export const NotificationColumn =[
     {
         Header:'Purpose',
         accessor:'purpose'
-    },
-    {
-        Header:'Photo',
-        accessor:'photo'
     }
 ]

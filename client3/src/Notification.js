@@ -7,11 +7,12 @@ import './Dashboard.css'
 import { DashboardGlobalFilter } from './DashboardGlobalFilter'
 import axios from "axios"
 import Navbar from './Navbar'
+import Loading from './img/load.gif'
 function Notification(){
     const navigate = useNavigate();
-    const [d1,setd1] = useState([])
+    const [d2,setd2] = useState([])
     const columns = useMemo(() => NotificationColumn,[])
-    const data = useMemo(() => [...d1],[d1])
+    const data = useMemo(() => [...d2],[d2])
     // const dataColumn = useMemo(
     //     () => d1[0]
     //         ? Object.keys(d1[0])
@@ -40,7 +41,7 @@ function Notification(){
             //     id:'photo',
             //     Header:'Photo',
             //     Cell : ({row}) => (
-
+                        
                     
             //         // <button className='view-details' onClick={() => navigate(`/information/${row.cells[3].value}`)}>
             //         //     View
@@ -49,6 +50,18 @@ function Notification(){
                     
             //     )
             // },
+            // {
+            //     Header: "Photo",
+            //     accessor: "photo",
+            
+            //     Cell: ({ cell:{value}})=>(
+            //       <div>
+            //         <img
+            //           src={value} alt={value}
+            //         />
+            //       </div>
+            //     )
+            //   },
             {
                 id:'accept',
                 Header:'Accept Report',
@@ -74,7 +87,7 @@ async function retrieve(){
     const result = await axios.get("http://localhost:5000/forum/all")
     console.log(result)
     if(result){
-    setd1(result.data.data)
+    setd2(result.data.data)
     }
 }
 
@@ -120,7 +133,7 @@ retrieve()
             setFilter={setGlobalFilter} 
         />
         
-        <table {...getTableProps()}>
+        { d2.length!== 0 ? <table {...getTableProps()}>
             <thead>
                 {headerGroups.map((headerGroups) =>(
                     <tr {...headerGroups.getHeaderGroupProps()}>
@@ -155,7 +168,7 @@ retrieve()
                     })
                 }
             </tbody>
-        </table>
+        </table> :<img className='loading-roll' src={Loading}></img>}
         <div className='footerDashboard'>
             <div className='pageChange'>
                 <button className='initialPage' onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>
