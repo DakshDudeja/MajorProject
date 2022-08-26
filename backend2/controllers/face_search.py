@@ -7,12 +7,12 @@ import cv2
 import sys
 import os
  
-file = sys.argv[1]
+# file = sys.argv[1]
 
-cascPathface = "/home/ankit/.local/lib/python3.10/site-packages/cv2/data/haarcascade_frontalface_alt2.xml"
+# cascPathface = "/home/ankit/.local/lib/python3.10/site-packages/cv2/data/haarcascade_frontalface_alt2.xml"
 #find path of xml file containing haarcascade file
-# cascPathface = os.path.dirname(
-#  cv2._file_) + "/data/haarcascade_frontalface_alt2.xml"
+cascPathface = os.path.dirname(
+ cv2._file_) + "/data/haarcascade_frontalface_alt2.xml"
 # load the harcaascade in the cascade classifier
 faceCascade = cv2.CascadeClassifier(cascPathface)
 # load the known faces and embeddings saved in last filez
