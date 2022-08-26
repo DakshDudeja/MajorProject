@@ -122,12 +122,12 @@ function SignUp(){
                             <span>Confirm Password</span>
                         </div>
                         {/* <input type='submit' value='Send' className='form-submit-btn'></input> */}
-                        <div className="login-form-btn">
-                            <a href="/home">Signup</a>
-                        </div>
-                        <div className="login-form-btn">
-                            <a href="/">Already have an account? Login</a>
-                        </div>
+                        <a href="/home"><div className="login-form-btn">
+                            Signup
+                        </div></a>
+                        <a href="/"><div className="login-form-btn">
+                            Already have an account? Login
+                        </div></a>
                     </form>
                 </div>
             </div>
