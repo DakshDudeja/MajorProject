@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const Info = require("../models/info")
-
+const mail = require("./gmail")
 router.post("/",async (req,res)=>{
 
     try{
@@ -103,12 +103,23 @@ router.get("/all",async (req,res)=>{
 
 router.post("/add",(req,res)=>{
 
+console.log("vghvghv")
+    
 try{
     const newinfo = new Info({
         description:[],
         aadharId:req.body.aadharId,
         photo:req.body.photo,
-        station_address:req.body.station_address
+        station_address:req.body.station_address,
+        name:req.body.name,
+        age:req.body.age,
+        fingerprint:"",
+        gender:req.body.gender,
+        address:req.body.address,
+        newphoto:"",
+        dob:"",
+        mobile:req.body.mobile,
+        father_name:req.body.father_name
 
     })
     const des = {
@@ -118,6 +129,9 @@ try{
     }
     newinfo.description.push(des)
     newinfo.save()
+
+    mail("hellooo","test","kumarvermaankit9555@gmail.com")
+
 }
 
 catch(err){
