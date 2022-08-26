@@ -128,7 +128,9 @@ input::-webkit-inner-spin-button {
 }
 
 
-
+.para{
+    margin-left: 100px;
+}
 
 /* .SearchOption{
     text-align: center;

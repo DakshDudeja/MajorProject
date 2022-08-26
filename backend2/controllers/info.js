@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const Info = require("../models/info")
-const mail = require("./gmail")
+// const mail = require("./gmail")
 router.post("/",async (req,res)=>{
 
     try{
@@ -129,8 +129,12 @@ try{
     }
     newinfo.description.push(des)
     newinfo.save()
-
-    mail("hellooo","test","kumarvermaankit9555@gmail.com")
+    console.log(success)
+    res.status(200).json({
+        success:true,
+        
+    })
+    // mail("hellooo","test","kumarvermaankit9555@gmail.com")
 
 }
 

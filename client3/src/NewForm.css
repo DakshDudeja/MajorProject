@@ -25,19 +25,19 @@
     border-radius: 8px;
     background-color: #4070f4;
 }
-.form-container form{
+.form-container .div{
     margin-top: 16px;
     position: relative;
     min-height: 500px;
     background-color: #fff;
 }
-.form-container form .details{
+.form-container .div .details{
     margin-top: 30px;
 }
-.form-container form .details{
+.form-container .div .details{
     margin-top: 10px;
 }
-.form-container form .title{
+.form-container .div .title{
     display: block;
     margin-bottom: 8px;
     font-size: 17px;
@@ -45,13 +45,13 @@
     margin: 6px 0;
     color: #333;
 }
-.form-container form .fields{
+.form-container .div .fields{
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-form .fields .input-field{
+.div .fields .input-field{
     display: flex;
     width: calc(100% / 3 - 15px);
     flex-direction: column;
@@ -82,7 +82,7 @@ form .fields .input-field{
 .input-field input[type="date"]:valid{
     color: #333;
 }
-form button{
+.div button{
     display: flex;
     justify-content: center !important;
     text-align: center !important;

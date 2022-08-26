@@ -8,7 +8,7 @@ function Home(props){
   return (
     <div>
         <Navbar />
-        <Slider />
+        {/* <Slider /> */}
         {/* <NewForm /> */}
         <SearchOption setMetric={props.setMetric}/>
     </div>

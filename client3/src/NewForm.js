@@ -1,15 +1,19 @@
 import React from 'react'
 import './NewForm.css'
 import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 
 function NewForm(props){
 
+    const navigate = useNavigate();
 
 
     async function send(){
         console.log("bhjhvh")
-        const result = await axios.post("http://localhost:5000/info/add",props.metric)
-        console.log(result)
+         axios.post("http://localhost:5000/info/add",props.metric)
+      
+        navigate("/dashboard")
+        
         
     }
 
@@ -19,7 +23,7 @@ function NewForm(props){
     <>
         <div className='form-container'>
             <header>Information Form</header>
-            <div>
+            <div className='div'>
                 <div className='form'>
                 <div className='details personal'>
                         <span className='title'>Personal Details</span>

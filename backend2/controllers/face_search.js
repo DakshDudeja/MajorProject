@@ -52,16 +52,14 @@ function face(file,res){
     };``
 
         PythonShell.run('./controllers/face_search.py', options, async function (err, results) {
-          const demo_data = [
-            {"id":"1001","Name":"sourav jha","UID":"654039758261","Father Name":"Ankit Jha","Date of birth":"03/07/2001","gender":"male","Mobile Number":"9599245905","address":"a7/27-a phase 5 aya nagar, new delhi"},
-            {"id":"1002","Name":"Pranjal Gupta","UID":"654039758262","Father Name":"Rajesh Gupta","Date of birth":"02/20/2001","gender":"Female","mobile no":"1234567898","address":"b5/35 rohini ,new delhi"},
-            {"id":"1003","Name":"Mahak Chaudhary","UID":"654039758263","Father Name":"Ramesh Chaudhary","Date of birth":"03/07/2001","gender":"female","mobile no":"9876543212","address":"i12 rajnagar,up"},
-            {"id":"1004","Name":"Mudit Sharma","UID":"654039758264","Father Name":"Somesh Sharma","Date of birth":"06/22/2001","gender":"male","mobile no":"9876543213","address":"a9/27-a phase 6 aya nagar, new delhi"},
-            {"id":"1005","Name":"Ankit Verma","UID":"654039758265","Father Name":"Rohit Verma","Date of birth":"08/05/2001","gender":"male","mobile no":"9876543214","address":"b7/35 rohini ,new delhi"},
-            {"id":"1006","Name":"Daksh Dudeja","UID":"654039758266","Father Name":"Rahul Dudeja","Date of birth":"09/03/2001","gender":"male","mobile no":"9876543215","address":"i212 rajnagar,up"}
-            ]
+          
+          if(results){
+
+        
             var uid = ""
-            console.log(results[0] === "mudit.jpeg")
+            if(results !== null){
+
+            
             if(results[0] === "mudit.jpeg"){
               uid = "654039758264";
             }
@@ -81,11 +79,16 @@ function face(file,res){
               uid = "654039758266";
             }
             
+          }
+          else{
+            res.status(200).json({
+              success:false
+            })
+          }
 
-            if(results){
-              console.log("vhjgh")
+           
               // console.log(results[0].substring(0,18))
-              console.log(uid)
+            
             const r1 = await Info.findOne({UID:uid})
             // console.log(r1)
             if(r1){
@@ -109,10 +112,15 @@ function face(file,res){
                 })  
               }
             }
-            }
+          }
+          else{
+            res.status(200).json({
+              success:false
+            })  
+          }
 
 
-            console.log(err)
+           
     })
 }
 
