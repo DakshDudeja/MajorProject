@@ -111,10 +111,7 @@ console.log(props)
             <div className='card-file-btn'>
               <input onChange={(event)=>biometricSearch(event)} type='file'></input>
             </div>
-              <button className='card-submit-btn'>Search</button>
-            <div className='card-submit-btn'>
-              <button onClick={searchbyBiometric}>Search</button>
-            </div>
+              <button className='card-submit-btn' onClick={searchbyBiometric}>Search</button>
           </div>
         </div>
         <div className='card'>
@@ -131,11 +128,7 @@ console.log(props)
             <div className='card-file-btn'>
               <input onChange={(event)=>faceSearch(event)}  type='file'></input>
             </div>
-  
-              <button className='card-submit-btn'>Search</button>
-            <div className='card-submit-btn'>
-              <button onClick={searchbyface}>Search</button>
-            </div>
+              <button className='card-submit-btn' onClick={searchbyface}>Search</button>
           </div>
         </div>
       </div>

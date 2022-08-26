@@ -32,7 +32,7 @@ function Login(){
 
         const formdata = new FormData()
         formdata.append("file",event.target.files[0])
-        Upload(event.target.files[0].name,event.target.files[0],setphoto)
+        // Upload(event.target.files[0].name,event.target.files[0],setphoto)
         
         
     }
@@ -44,7 +44,9 @@ function save(){
     const r1 = axios.post("http://localhost:5000/forum",{photo:photo,address:address+pincode,purpose:purpose,name:name, pincode:pincode})
     if(r1){
         setstatus("anonymous")
+        setstatus("image")
     }
+    
 }
 
 
@@ -100,8 +102,8 @@ function save(){
                             <select onChange={(event)=>{setpurpose(event.target.value)
                             
                             }}>
-                                <option value="Reporting Missing Person" >Reporting Missing Person</option>
-                                <option value="Report Suspicious Activity" >Report Suspicious Activity</option>
+                                <option value="Reporting Missing Person" >Report Found Person</option>
+                                <option value="Report Suspicious Activity" >Report Human Trafficking</option>
                             </select>
                         </div>
                         <div className='information'>
