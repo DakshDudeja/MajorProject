@@ -157,10 +157,19 @@ retrieve()
                         return (
                             <tr {...row.getRowProps()}>{
                                 row.cells.map((cell) => {
-                                    console.log(row.cells[4].column)
-                                    return <td {...cell.getCellProps()}>{
+                                    if(cell.row.cells[4].column.id === "photo"){
+                                        return (
+                                    
+                                            <td {...cell.getCellProps()}>{
+                                                <img src={cell.row.cells[4].column.value}/>
+                                            }</td>)
+                                    }
+                                    // console.log(row.]cells[4].column)
+                                    return (
+                                    
+                                    <td {...cell.getCellProps()}>{
                                         cell.render('Cell')
-                                    }</td>
+                                    }</td>)
                                 })
                             }
                             </tr>

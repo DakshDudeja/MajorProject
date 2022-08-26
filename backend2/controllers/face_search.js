@@ -37,6 +37,9 @@ router.post('/', upload.single('file'), (req, res) => {
     
     }
 
+    const t1 = await Aadhar.find({$and:[{gender:req.body.gender,state:req.body.state}]})
+
+
     face(req.file.filename,res)
 
   });
