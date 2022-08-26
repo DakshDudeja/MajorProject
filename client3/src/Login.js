@@ -94,7 +94,7 @@ function save(){
                     <h3 className='title'>Anonymous! Report Crime</h3>
                     <p className='text'>Come forward and help us by reporting suspicious activities happening around you without disclosing your identity.</p>
                    {status === "image" ? <div className='info'>
-                        <div className='information information-box-up'>    const [verfied,setstatus] = useState("")
+                        <div className='information information-box-up'>   
 
                             <label className='information-box-upload'>Choose File<input onChange={(event)=>upload(event)} type="file"></input></label>
                         </div>

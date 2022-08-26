@@ -2,12 +2,18 @@ import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import './SearchOption.css'
 import axios from "axios"
+
 function SearchOption(props){
 
   const navigate = useNavigate();
   const formdata = new FormData();
   const formdata2 = new FormData();
   const [aadhar,setaadhar] = useState("")
+
+  const [biostate,setbiostate] = useState(false)
+  const [facestate,setfacestate] = useState(false)
+  const [nostate,setnostate] = useState(false)
+
   async function biometricSearch(event){
 
    
@@ -32,6 +38,9 @@ function SearchOption(props){
       props.setMetric(res.data.data);
       navigate("/new-form")
     }
+    else{
+      setbiostate(true)
+    }
   }
 
 
@@ -39,20 +48,26 @@ function SearchOption(props){
     console.log("hbhhjvvhj")
     const res = await axios.post("http://localhost:5000/face",formdata2)
     formdata2.delete("file")
-    if(res){
+    if(res.data.success === true){
       console.log(res)
       props.setMetric(res.data.data);
       navigate("/new-form")
+    }
+    else{
+      setfacestate(true)
     }
   }
 
 console.log(props)
   async function searchbyno(){
     const res = await axios.post("http://localhost:5000/aadhar",{id:aadhar})
-    if(res){
+    if(res.data.success === true){
       console.log(res)
       props.setMetric(res.data.data);
       navigate("/new-form")
+    }
+    else{
+      setnostate(true)
     }
   }
 
@@ -97,6 +112,7 @@ console.log(props)
             
           </div>
         </div>
+       { nostate && <p className="para" style={{color:"red"}}>Not Found</p>}
         <div className='card'>
           <div className='card-image'>
             <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWjbDIemvGRhKKv5_iU26ZuJAAaKbsO-x_aQ&usqp=CAU' alt='fingerprint image'></img>
@@ -113,6 +129,7 @@ console.log(props)
             </div>
               <button className='card-submit-btn' onClick={searchbyBiometric}>Search</button>
           </div>
+          { biostate && <p className="para" style={{color:"red"}}>Not Found</p>}
         </div>
         <div className='card'>
           <div className='card-image'>
@@ -130,6 +147,8 @@ console.log(props)
             </div>
               <button className='card-submit-btn' onClick={searchbyface}>Search</button>
           </div>
+          { facestate && <p className="para" style={{color:"red"}}>Not Found</p>}
+
         </div>
       </div>
     </>

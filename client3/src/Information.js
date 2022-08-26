@@ -33,7 +33,7 @@ function Information(){
         </div> */}
         <div className='form-container'>
             <header>Information Form</header>
-            <form action='#'>
+            <div className='div' action='#'>
                 <div className='form'>
                 <div className='details personal'>
                         <span className='title'>Personal Details</span>
@@ -98,7 +98,7 @@ function Information(){
                     </div>
                 </div>
                 <button className='submit-information'>Submit</button>
-            </form>
+            </div>
         </div>
     </>
   )

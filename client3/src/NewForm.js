@@ -1,13 +1,29 @@
 import React from 'react'
 import './NewForm.css'
+import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 
 function NewForm(props){
+
+    const navigate = useNavigate();
+
+
+    async function send(){
+        console.log("bhjhvh")
+         axios.post("http://localhost:5000/info/add",props.metric)
+      
+        navigate("/dashboard")
+        
+        
+    }
+
+
 
   return (
     <>
         <div className='form-container'>
             <header>Information Form</header>
-            <form action='#'>
+            <div className='div'>
                 <div className='form'>
                 <div className='details personal'>
                         <span className='title'>Personal Details</span>
@@ -46,7 +62,7 @@ function NewForm(props){
                             </div>
                             <div className='input-field'>
                                 <label>Uploar Latest Image</label>
-                                <input type="file" placeholder='File upload ka input kaam ni kar rha' required></input>
+                                <input type="file" placeholder='File upload ka input kaam ni kar rha' ></input>
                             </div>
                         </div>
                     </div>
@@ -80,8 +96,8 @@ function NewForm(props){
                         </div>
                     </div>
                 </div>
-                <button className='submit-information'>Submit</button>
-            </form>
+                <button onClick={send} className='submit-information'>Submit</button>
+            </div>
         </div>
     </>
   )

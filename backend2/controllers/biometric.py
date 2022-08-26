@@ -76,10 +76,10 @@ kp1, kp2, mp = None, None, None
 
 
 counter =0
-for file in os.listdir("D:/SIH_Kanpur/backend2/controllers/archive/f_archive"):
+for file in os.listdir("/home/ankit/Desktop/SIH-New-build/backend2/controllers/archive/f_archive"):
     
     counter+=1
-    fingerprint_image = cv2.imread('D:/SIH_Kanpur/backend2/controllers/archive/f_archive/' +file)
+    fingerprint_image = cv2.imread('/home/ankit/Desktop/SIH-New-build/backend2/controllers/archive/f_archive/' +file)
     sift = cv2.SIFT_create()
 
     keypoint_1, desriptors_1 = sift.detectAndCompute(sample, None)

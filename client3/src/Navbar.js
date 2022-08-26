@@ -23,9 +23,11 @@ function Navbar(){
                 <li>
                   <NavLink  to='/notification' activeclassname='active'>Notifications</NavLink>
                 </li>
+             
                 <li>
                   <NavLink  to='/contact' activeclassname='active'>Contact Us</NavLink>
                 </li>
+                
             </ul>
         </nav>
     </>

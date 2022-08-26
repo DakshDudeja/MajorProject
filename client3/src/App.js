@@ -12,6 +12,8 @@ import ContactUs from './ContactUs';
 import PublicCorner from './PublicCorner';
 import Notification from './Notification'
 // import FoundInfo from './Information';
+import Map from "./police_stations"
+
 function App() {
 
 
@@ -32,6 +34,7 @@ const [metric,setMetric] = useState([])
         <Route path="/contact" element={<ContactUs />} />
         <Route path="information/:UID" element={<Information />}  />
         <Route path="/notification" element={<Notification />} />
+        <Route path="/police-stations" element={<Map />} />
       </Routes>
     </BrowserRouter>
   );
