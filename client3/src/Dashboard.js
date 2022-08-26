@@ -8,6 +8,7 @@ import './Dashboard.css'
 import { DashboardGlobalFilter } from './DashboardGlobalFilter'
 import axios from "axios"
 import Navbar from './Navbar'
+import Loading from './img/loading.gif'
 function Dashboard(){
     const navigate = useNavigate();
     const [d1,setd1] = useState([])
@@ -82,7 +83,7 @@ retrieve()
             setFilter={setGlobalFilter} 
         />
         
-        <table {...getTableProps()}>
+       { d1.length!== 0 ?<table {...getTableProps()}>
             <thead>
                 {headerGroups.map((headerGroups) =>(
                     <tr {...headerGroups.getHeaderGroupProps()}>
@@ -101,12 +102,14 @@ retrieve()
             <tbody {...getTableBodyProps()}>
                 {
                     page.map(row => {
-                       
+                    //    console.log(row)
                         prepareRow(row)
                         return (
                             <tr {...row.getRowProps()}>{
                                 row.cells.map((cell) => {
+                                
                                     return <td {...cell.getCellProps()}>{
+                                        
                                         cell.render('Cell')
                                     }</td>
                                 })
@@ -116,7 +119,7 @@ retrieve()
                     })
                 }
             </tbody>
-        </table>
+        </table>:<img className='loading-roll' src={Loading}></img>}
         <div className='footerDashboard'>
             <div className='pageChange'>
                 <button className='initialPage' onClick={() => gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</button>

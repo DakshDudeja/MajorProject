@@ -12,6 +12,26 @@ function Notification(){
     const [d1,setd1] = useState([])
     const columns = useMemo(() => NotificationColumn,[])
     const data = useMemo(() => [...d1],[d1])
+    // const dataColumn = useMemo(
+    //     () => d1[0]
+    //         ? Object.keys(d1[0])
+    //         .map((key) => {
+    //             if(key === "photo")
+    //                 return{
+    //                     Header:key,
+    //                     accessor:key,
+    //                     Cell: ({ value }) =><img src={value}></img>,
+    //                     maxWidth:60,
+    //                 }
+    //                 return { Header:key, accessor:key};
+    //         })
+    //         : [],
+    //         [d1]
+    // );
+    // const tableInstance = useTable({
+    //     columns:dataColumn,
+    //     data:data,
+    // })
     const [info,setinfo] = useState()
     const tableHooks = (hooks) => {
         hooks.visibleColumns.push((columns) => [
@@ -124,6 +144,7 @@ retrieve()
                         return (
                             <tr {...row.getRowProps()}>{
                                 row.cells.map((cell) => {
+                                    console.log(row.cells[4].column)
                                     return <td {...cell.getCellProps()}>{
                                         cell.render('Cell')
                                     }</td>
