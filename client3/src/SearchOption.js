@@ -60,15 +60,22 @@ function SearchOption(props){
 
 console.log(props)
   async function searchbyno(){
-    const res = await axios.post("http://localhost:5000/aadhar",{id:aadhar})
-    if(res.data.success === true){
-      console.log(res)
-      props.setMetric(res.data.data);
-      navigate("/new-form")
-    }
-    else{
-      setnostate(true)
-    }
+
+if(aadhar.length !== 12){
+  setnostate(true)
+}
+else{
+  const res = await axios.post("http://localhost:5000/aadhar",{id:aadhar})
+  if(res.data.success === true){
+    console.log(res)
+    props.setMetric(res.data.data);
+    navigate("/new-form")
+  }
+  else{
+    setnostate(true)
+  }
+}
+   
   }
 
   return (
@@ -109,10 +116,10 @@ console.log(props)
               <input onChange={(event)=>setaadhar(event.target.value)} type='number' placeholder='Enter aadhar number'></input>
             </div>
               <button className='card-submit-btn' onClick={searchbyno}>Search</button>
-            
+              { nostate && <p className="para" style={{color:"red"}}>Not Found</p>}
+
           </div>
         </div>
-       { nostate && <p className="para" style={{color:"red"}}>Not Found</p>}
         <div className='card'>
           <div className='card-image'>
             <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWjbDIemvGRhKKv5_iU26ZuJAAaKbsO-x_aQ&usqp=CAU' alt='fingerprint image'></img>
