@@ -21,41 +21,42 @@ import numpy as np
 video_capture = cv2.VideoCapture(0)
 
 # Load a sample picture and learn how to recognize it.
-pranjal_image = face_recognition.load_image_file(r"D:\SIH_Kanpur\backend2\controllers\faces\654039758262.jpg")
-pranjal_face_encoding = face_recognition.face_encodings(pranjal_image)[0]
+# pranjal_image = face_recognition.load_image_file(r"C:\Users\DAKSH DUDEJA\OneDrive\Desktop\SIH_Kanpur\backend2\controllers\faces\654039758261.jpeg")
+# pranjal_face_encoding = face_recognition.face_encodings(pranjal_image)[0]
 
 # Load a second sample picture and learn how to recognize it.
-mahak_image = face_recognition.load_image_file(r"D:\SIH_Kanpur\backend2\controllers\faces\654039758263.jpeg")
-mahak_face_encoding = face_recognition.face_encodings(mahak_image)[0]
+# mahak_image = face_recognition.load_image_file(r"C:\Users\DAKSH DUDEJA\OneDrive\Desktop\SIH_Kanpur\backend2\controllers\faces\654039758261.jpeg")
+# mahak_face_encoding = face_recognition.face_encodings(mahak_image)[0]
 
-daksh_image = face_recognition.load_image_file(r"D:\SIH_Kanpur\backend2\controllers\faces\654039758266.jpeg")
+daksh_image = face_recognition.load_image_file(r"C:\Users\DAKSH DUDEJA\OneDrive\Desktop\TRAINING PROJECT\SIH_Kanpur\backend2\controllers\faces\654039758266.jpeg")
 daksh_face_encoding = face_recognition.face_encodings(daksh_image)[0]
 
-Sourav_image = face_recognition.load_image_file(r"D:\SIH_Kanpur\backend2\controllers\faces\654039758261.jpeg")
-Sourav_face_encoding = face_recognition.face_encodings(Sourav_image)[0]
+# Sourav_image = face_recognition.load_image_file(r"C:\Users\DAKSH DUDEJA\OneDrive\Desktop\SIH_Kanpur\backend2\controllers\faces\654039758261.jpeg")
+# Sourav_face_encoding = face_recognition.face_encodings(Sourav_image)[0]
 
-ankit_image = face_recognition.load_image_file(r"D:\SIH_Kanpur\backend2\controllers\faces\654039758265.jpeg")
-ankit_face_encoding = face_recognition.face_encodings(ankit_image)[0]
+# ankit_image = face_recognition.load_image_file(r"C:\Users\DAKSH DUDEJA\OneDrive\Desktop\SIH_Kanpur\backend2\controllers\faces\654039758261.jpeg")
+# ankit_face_encoding = face_recognition.face_encodings(ankit_image)[0]
 
-mudit_image = face_recognition.load_image_file(r"D:\SIH_Kanpur\backend2\controllers\faces\654039758264.jpeg")
-mudit_face_encoding = face_recognition.face_encodings(mudit_image)[0]
+# amrita_image = face_recognition.load_image_file(r"C:\Users\DAKSH DUDEJA\OneDrive\Desktop\SIH_Kanpur\backend2\controllers\faces\amrita.jpg")
+# amrita_face_encoding = face_recognition.face_encodings(amrita_image)[0]
+
 # Create arrays of known face encodings and their names
 known_face_encodings = [
-    pranjal_face_encoding,
-    mahak_face_encoding,
+    # pranjal_face_encoding,
+    # mahak_face_encoding,
     daksh_face_encoding,
-    Sourav_face_encoding,
-   ankit_face_encoding,
-    mudit_face_encoding
+#     Sourav_face_encoding,
+#    ankit_face_encoding,
+#     amrita_face_encoding
     
 ]
 known_face_names = [
-    "pranjal",
-    "mahak",
+    # "pranjal",
+    # "mahak",
     "daksh",
-    "sourav",
-    "ankit",
-    "mudit"
+    # "sourav",
+    # "ankit",
+    # "amrita"
 ]
 
 # Initialize some variables

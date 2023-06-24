@@ -21,31 +21,31 @@ const upload = multer({dest: 'uploads/'});
 
 router.post('/', upload.single('file'), async(req, res) => {
 
-    console.log("hello1")
-    if (!req.file) {
-      console.log("No file received");
-      return res.send({
-        success: false
-      });
+    // console.log("hello1")
+    // if (!req.file) {
+    //   console.log("No file received");
+    //   return res.send({
+    //     success: false
+    //   });
   
-    } else {
-      console.log('file received');
+    // } else {
+    //   console.log('file received');
     
-    }
+    // }
 
     // const t1 = await Aadhar.find({$and:[{gender:req.body.gender,state:req.body.state}]})
     
-    Biometric(req.file.filename,res)
+    Biometric(res)
 
   });
 
-function Biometric(file,res){
+function Biometric(res){
 
   
 
   let options = {
 
-    args:`D:/SIH_Kanpur/backend2/uploads/${file}`
+    args:`D:SIH_Kanpur/backend2/uploads/`
 };``
 
     PythonShell.run('./controllers/biometric.py', options, async function (err, results) {

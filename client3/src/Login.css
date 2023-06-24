@@ -66,6 +66,8 @@ body {
   }
   .login-form-btn:hover{
     box-shadow: 2px 2px 4px #6b7280;
+    background-color: rgba(0, 43, 91, 0.9);
+    color: #fff;
   }
   .input:hover {
     box-shadow: 2px 2px 4px #6b7280;
@@ -74,8 +76,9 @@ body {
     margin-top: 10px;
   }
   .forgetPassword a {
-    color: #1f2937;
-    font-size: 13px;
+    color: #fff;
+    font-size: 15px;
+    margin-left: 5px;
     text-decoration: none;
   }
   .loginBtn {
@@ -138,4 +141,7 @@ body {
     justify-content: center;
     height: 20px;
     width: 100%;
+  }
+  .input-container input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
   }

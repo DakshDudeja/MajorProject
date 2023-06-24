@@ -35,7 +35,8 @@ function face(res){
 
     let options = {
 
-        args:`/home/ankit/Desktop/SIH-New-build/backend2/uploads/`
+        args:`ghgchch`,
+        pythonOptions: ['-u']
     };``
 
         PythonShell.run('./controllers/faces/face_recog_sih.py', options, async function (err, results) {
@@ -105,10 +106,7 @@ function face(res){
               success:false
             })  
           }
-          console.log(err)
-
-           
+          console.log(err)           
     })
 }
-
 module.exports = router

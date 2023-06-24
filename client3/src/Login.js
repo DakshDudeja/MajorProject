@@ -88,7 +88,7 @@ function save(){
     <>
         <div className='contact-container'>
             <span className='big-circle'></span>
-            <img src={shape} className='square'></img>
+            {/* <img src={shape} className='square'></img> */}
             <div className='form'>
                 <div className='contact-info'>
                     <h3 className='title'>Anonymous! Report Crime</h3>

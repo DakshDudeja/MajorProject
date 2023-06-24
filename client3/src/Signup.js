@@ -96,7 +96,7 @@ function SignUp(){
             <img src={shape} className='square'></img>
             <div className='form'>
                 <div className='contact-info'>
-                    <h3 className='title'>About Cyduck</h3>
+                    <h3 className='title'>About TaLaash</h3>
                     <p className='text-info'>Platform for helping authorised officials in identification of individual rescued from human trafficking.</p>
                 </div>
                 <div className='contact-form'>

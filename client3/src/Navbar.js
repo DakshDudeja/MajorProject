@@ -12,7 +12,7 @@ function Navbar(){
             <label htmlFor='click' className='checkbtn' id='icon'>
                 <FaBars />
             </label>
-            <label className='logo'><span>Cy</span>duck</label>
+            <label className='logo'><span>Ta</span>Laash</label>
             <ul>
                 <li>
                   <NavLink to="/home" activeclassname='active'>Home</NavLink>

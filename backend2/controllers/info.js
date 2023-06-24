@@ -128,7 +128,6 @@ try{
     }
     newinfo.description.push(des)
     newinfo.save()
-    console.log(success)
     res.status(200).json({
         success:true,
         

@@ -10,14 +10,15 @@ function SearchOption(props){
   const formdata = new FormData();
   const formdata2 = new FormData();
   const [aadhar,setaadhar] = useState("")
-
+  const [age,setage] = useState("")
   const [biostate,setbiostate] = useState(false)
   const [facestate,setfacestate] = useState(false)
   const [nostate,setnostate] = useState(false)
   const [l1,setl1] = useState(false)
   const [l2,setl2] = useState(false)
   const [l3,setl3] = useState(false)
-
+  const [gender,setgender] = useState("prefer not to say")
+  const [state,setstate] = useState("state")
   async function biometricSearch(event){
 
    
@@ -37,8 +38,9 @@ function SearchOption(props){
   async function searchbyBiometric(){
     setl1(true)
     const res = await axios.post("http://localhost:5000/biometric",formdata)
+    console.log(res)
     formdata.delete("file")
-    if(res.data.status === true){
+    if(res.data.success === true){
       console.log(res)
       props.setMetric(res.data.data);
       navigate("/new-form")
@@ -128,13 +130,19 @@ else{
             <div className='card-file-btn'>
               <input onChange={(event)=>setaadhar(event.target.value)} type='number' placeholder='Enter aadhar number'></input>
             </div>
-            <div className='card-file-btn'>
+            {/* <div className='card-file-btn'>
               <select>
+              <option>Gender</option>
                 <option>Male</option>
                 <option>Female</option>
                 <option>Prefer not to say</option>
               </select>
-            </div>
+            </div> */}
+            {/* <div className='card-file-btn'>
+            <input style={{width:"80px",marginBottom:"4px"}} onChange={(event)=>setage(event.target.value)} type='text' placeholder='Enter Age'></input>
+
+              <input style={{width:"80px",marginBottom:"4px"}} onChange={(event)=>setstate(event.target.value)} type='text' placeholder='Enter state'></input>
+            </div> */}
               <button className='card-submit-btn' onClick={searchbyno}>Search</button>
 {              l2 && <img className='loading' src={Loader}></img>
 }          </div>
@@ -152,15 +160,22 @@ else{
             {/* <div className='card-info'>
               <p>To search person using his/her biometrics upload biometric image in jpeg format. Then click on the submit button.</p>
             </div> */}
-            <div className='card-file-btn'>
+            {/* <div className='card-file-btn'>
               <input onChange={(event)=>biometricSearch(event)} type='file'></input>
-            </div>
+            </div> */}
             <div className='card-file-btn'>
               <select>
+              <option>Gender</option>
                 <option>Male</option>
                 <option>Female</option>
                 <option>Prefer not to say</option>
               </select>
+            </div>
+            <div className='card-file-btn'>
+            <input style={{width:"195px",height:"24px",marginBottom:"4px",padding:"0 0 0 10px"}} onChange={(event)=>setage(event.target.value)} type='number' placeholder='Enter Age'></input>
+            </div>
+            <div className='card-file-btn'>
+              <input style={{width:"195px",height:"24px",marginBottom:"4px",padding:"0 0 0 10px"}} onChange={(event)=>setstate(event.target.value)} type='text' placeholder='Enter state'></input>
             </div>
               <button className='card-submit-btn' onClick={searchbyBiometric}>Search</button>
 {l1&& <img className='loading' src={Loader}></img>}          </div>
@@ -176,16 +191,24 @@ else{
             {/* <div className='card-info'>
               <p>If you have the photo of the person upload the image file in jpeg format and click on the Search button.</p>
             </div> */}
-            <div className='card-file-btn'>
+            {/* <div className='card-file-btn'>
               <input onChange={(event)=>faceSearch(event)}  type='file'></input>
-            </div>
+            </div> */}
             <div className='card-file-btn'>
               <select>
+              <option>Gender</option>
                 <option>Male</option>
                 <option>Female</option>
                 <option>Prefer not to say</option>
               </select>
             </div>
+            <div className='card-file-btn'>
+            <input style={{width:"195px",height:"24px",marginBottom:"4px",padding:"0 0 0 10px"}} onChange={(event)=>setage(event.target.value)} type='text' placeholder='Enter Age'></input>
+              </div>
+              <div className='card-file-btn'>
+              <input style={{width:"195px",height:"24px",marginBottom:"4px",padding:"0 0 0 10px"}} onChange={(event)=>setstate(event.target.value)} type='text' placeholder='Enter state'></input>
+            </div>
+
               <button className='card-submit-btn' onClick={searchbyface}>Search</button>
 {  l3 &&      <img className='loading' src={Loader}></img>
 }          </div>

@@ -66,8 +66,8 @@ import cv2
 import sys
 
 
-file=sys.argv[1]
-sample = cv2.imread(file)
+# file=sys.argv[1]
+sample = cv2.imread("C:/Program Files/Mantra/MFS100/Driver/MFS100Test/FingerData/FingerImage.bmp")
 
 best_score = 0
 filename = None
@@ -76,10 +76,10 @@ kp1, kp2, mp = None, None, None
 
 
 counter =0
-for file in os.listdir("D:/SIH_Kanpur/backend2/controllers/archive/f_archive"):
+for file in os.listdir("D:/SIH_Kanpur/backend2/controllers/cyduck_fjpg"):
     
     counter+=1
-    fingerprint_image = cv2.imread('D:/SIH_Kanpur/backend2/controllers/archive/f_archive/' +file)
+    fingerprint_image = cv2.imread('D:/SIH_Kanpur/backend2/controllers/cyduck_fjpg/' +file)
     sift = cv2.SIFT_create()
 
     keypoint_1, desriptors_1 = sift.detectAndCompute(sample, None)
@@ -91,11 +91,11 @@ for file in os.listdir("D:/SIH_Kanpur/backend2/controllers/archive/f_archive"):
     match_points = []
 
     for p, q in matches:
-        if p.distance < 0.1 * q.distance:
+        if p.distance < 0.5 * q.distance:
             match_points.append(p)
 
     keypoints =0
-    if len(keypoint_1) < len(keypoint_2):
+    if len(keypoint_1) <= len(keypoint_2):
         keypoints = len(keypoint_2)
 
     else:
@@ -111,8 +111,8 @@ for file in os.listdir("D:/SIH_Kanpur/backend2/controllers/archive/f_archive"):
 
 
 
-result = cv2.drawMatches(sample, kp1, image, kp2, mp, None)
-result = cv2.resize(result, (0,0), fx=4, fy=4)
+# result = cv2.drawMatches(sample, kp1, image, kp2, mp, None)
+# result = cv2.resize(result, (0,0), fx=4, fy=4)
 print(filename)
 print("score: " + str(best_score))
 # cv2.waitKey()

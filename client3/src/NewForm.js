@@ -30,7 +30,7 @@ function NewForm(props){
             <div className='div'>
                 <div className='form'>
                     <div className='details-info personal'>
-                        <span className='title'>Profile Image</span>
+                        {/* <span className='title'>Profile Image</span> */}
                         <div className='fields'>
                             <div className='input-field'>
                                 <img className='missing-person-image' src={props.metric.photo} alt="missing person image"></img>

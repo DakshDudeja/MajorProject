@@ -76,7 +76,7 @@
     visibility: hidden;
 }
 .card .card-file-btn input[type='file']::before {
-    content: 'Upload image in .jpeg format';
+    content: 'Upload image';
     display: flex;
     justify-content: center;
     background: linear-gradient(top, #f9f9f9, #e3e3e3);
